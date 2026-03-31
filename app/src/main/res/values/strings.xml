@@ -170,12 +170,12 @@
     <string name="stat_done">Completed: %1$d</string>
     <string name="stat_avg">Average score: %1$d%%</string>
     <string name="stat_start">Start your first training!</string>
+    <string name="title_carte">Find nearby trainings</string>
     <string name="carte_no_city">Set your city to find nearby trainings</string>
     <string name="carte_near">In-person trainings near %1$s</string>
     <string name="carte_no_nearby">No trainings in %1$s — showing all in-person trainings</string>
-    <string name="update_city_title">My location</string>
+    <string name="update_city_title">Search</string>
     <string name="hint_city">City (e.g. Paris)</string>
-    <string name="hint_address">Full address (optional)</string>
     <string name="city_updated">Location updated!</string>
     <string name="err_own_formation">You cannot enroll in your own training.</string>
     <string name="no_students_yet">No students enrolled yet.</string>
@@ -190,5 +190,6 @@
     <string name="theme_environment">Environment</string>
     <string name="theme_inclusion">Inclusion</string>
     <string name="filter_by_theme">Filter by theme</string>
+    <string name="btn_search">Search</string>
 
 </resources>

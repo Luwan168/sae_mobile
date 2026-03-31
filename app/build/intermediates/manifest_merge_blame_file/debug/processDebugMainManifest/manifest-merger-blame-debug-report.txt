@@ -10,189 +10,235 @@
 10        android:targetSdkVersion="36" />
 11
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:5:5-67
-12-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:5:22-64
+12-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:5:5-67
+12-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:5:22-64
 13    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-13-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:6:5-77
-13-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:6:22-74
+13-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:6:5-77
+13-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:6:22-74
 14    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-14-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:7:5-81
-14-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:7:22-78
-15
-16    <permission
-16-->[androidx.core:core:1.16.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:22:5-24:47
-17        android:name="sae.openminds.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-17-->[androidx.core:core:1.16.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:23:9-81
-18        android:protectionLevel="signature" />
-18-->[androidx.core:core:1.16.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:24:9-44
-19
-20    <uses-permission android:name="sae.openminds.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-20-->[androidx.core:core:1.16.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:26:5-97
-20-->[androidx.core:core:1.16.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:26:22-94
-21
-22    <application
-22-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:9:5-62:19
-23        android:allowBackup="true"
-23-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:10:9-35
-24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.16.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:28:18-86
-25        android:dataExtractionRules="@xml/data_extraction_rules"
-25-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:11:9-65
-26        android:debuggable="true"
-27        android:extractNativeLibs="false"
-28        android:fullBackupContent="@xml/backup_rules"
-28-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:12:9-54
-29        android:icon="@mipmap/ic_launcher"
-29-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:13:9-43
-30        android:label="@string/app_name"
-30-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:14:9-41
-31        android:roundIcon="@mipmap/ic_launcher_round"
-31-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:15:9-54
-32        android:supportsRtl="true"
-32-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:16:9-35
-33        android:testOnly="true"
-34        android:theme="@style/Theme.OpenMinds"
-34-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:17:9-47
-35        android:usesCleartextTraffic="true" >
-35-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:18:9-44
-36
-37        <!-- Splash -->
-38        <activity
-38-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:21:9-30:20
-39            android:name="sae.openminds.SplashActivity"
-39-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:22:13-43
-40            android:exported="true"
-40-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:23:13-36
-41            android:noHistory="true"
-41-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:25:13-37
-42            android:theme="@style/Theme.OpenMinds.Splash" >
-42-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:24:13-58
-43            <intent-filter>
-43-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:26:13-29:29
-44                <action android:name="android.intent.action.MAIN" />
-44-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:27:17-69
-44-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:27:25-66
-45
-46                <category android:name="android.intent.category.LAUNCHER" />
-46-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:28:17-77
-46-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:28:27-74
-47            </intent-filter>
-48        </activity>
-49
-50        <!-- Login -->
-51        <activity
-51-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:33:9-36:58
-52            android:name="sae.openminds.LoginActivity"
-52-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:34:13-42
-53            android:exported="false"
-53-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:35:13-37
-54            android:windowSoftInputMode="adjustResize" />
-54-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:36:13-55
-55
-56        <!-- Register -->
-57        <activity
-57-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:39:9-42:58
-58            android:name="sae.openminds.RegisterActivity"
-58-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:40:13-45
-59            android:exported="false"
-59-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:41:13-37
-60            android:windowSoftInputMode="adjustResize" />
-60-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:42:13-55
-61
-62        <!-- Main (Drawer) -->
-63        <activity
-63-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:45:9-47:40
-64            android:name="sae.openminds.MainActivity"
-64-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:46:13-41
-65            android:exported="false" />
-65-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:47:13-37
-66
-67        <!-- Notification receiver -->
-68        <receiver
-68-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:50:9-52:40
-69            android:name="sae.openminds.utils.NotificationReceiver"
-69-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:51:13-55
-70            android:exported="false" />
-70-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:52:13-37
-71        <receiver
-71-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:54:9-60:20
-72            android:name="sae.openminds.utils.BootReceiver"
-72-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:55:13-47
-73            android:exported="true" >
-73-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:56:13-36
-74            <intent-filter>
-74-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:57:13-59:29
-75                <action android:name="android.intent.action.BOOT_COMPLETED" />
-75-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:58:17-79
-75-->C:\sae_mobile\v3\openminds_final\app\src\main\AndroidManifest.xml:58:25-76
-76            </intent-filter>
-77        </receiver>
+14-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:7:5-81
+14-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:7:22-78
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:8:5-79
+15-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:8:22-76
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:9:5-81
+16-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:9:22-78
+17    <uses-permission
+17-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:10:5-11:38
+18        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+18-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:10:22-78
+19        android:maxSdkVersion="28" />
+19-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:11:9-35
+20
+21    <permission
+21-->[androidx.core:core:1.16.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:22:5-24:47
+22        android:name="sae.openminds.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+22-->[androidx.core:core:1.16.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:23:9-81
+23        android:protectionLevel="signature" />
+23-->[androidx.core:core:1.16.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:24:9-44
+24
+25    <uses-permission android:name="sae.openminds.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+25-->[androidx.core:core:1.16.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:26:5-97
+25-->[androidx.core:core:1.16.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:26:22-94
+26
+27    <supports-screens
+27-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:9:5-12:40
+28        android:anyDensity="true"
+28-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:10:9-34
+29        android:largeScreens="true"
+29-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:11:9-36
+30        android:normalScreens="true" />
+30-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:12:9-37
+31
+32    <uses-feature
+32-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:14:5-16:36
+33        android:name="android.hardware.location.network"
+33-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:15:9-57
+34        android:required="false" />
+34-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:16:9-33
+35    <uses-feature
+35-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:17:5-19:36
+36        android:name="android.hardware.location.gps"
+36-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:18:9-53
+37        android:required="false" />
+37-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:19:9-33
+38    <uses-feature
+38-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:20:5-22:36
+39        android:name="android.hardware.telephony"
+39-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:21:9-50
+40        android:required="false" />
+40-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:22:9-33
+41    <uses-feature
+41-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:23:5-25:36
+42        android:name="android.hardware.wifi"
+42-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:24:9-45
+43        android:required="false" />
+43-->[org.osmdroid:osmdroid-android:6.1.18] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\AndroidManifest.xml:25:9-33
+44
+45    <application
+45-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:13:5-66:19
+46        android:allowBackup="true"
+46-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:14:9-35
+47        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+47-->[androidx.core:core:1.16.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\AndroidManifest.xml:28:18-86
+48        android:dataExtractionRules="@xml/data_extraction_rules"
+48-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:15:9-65
+49        android:debuggable="true"
+50        android:extractNativeLibs="false"
+51        android:fullBackupContent="@xml/backup_rules"
+51-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:16:9-54
+52        android:icon="@mipmap/ic_launcher"
+52-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:17:9-43
+53        android:label="@string/app_name"
+53-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:18:9-41
+54        android:roundIcon="@mipmap/ic_launcher_round"
+54-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:19:9-54
+55        android:supportsRtl="true"
+55-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:20:9-35
+56        android:testOnly="true"
+57        android:theme="@style/Theme.OpenMinds"
+57-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:21:9-47
+58        android:usesCleartextTraffic="true" >
+58-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:22:9-44
+59
+60        <!-- Splash -->
+61        <activity
+61-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:25:9-34:20
+62            android:name="sae.openminds.SplashActivity"
+62-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:26:13-43
+63            android:exported="true"
+63-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:27:13-36
+64            android:noHistory="true"
+64-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:29:13-37
+65            android:theme="@style/Theme.OpenMinds.Splash" >
+65-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:28:13-58
+66            <intent-filter>
+66-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:30:13-33:29
+67                <action android:name="android.intent.action.MAIN" />
+67-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:31:17-69
+67-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:31:25-66
+68
+69                <category android:name="android.intent.category.LAUNCHER" />
+69-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:32:17-77
+69-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:32:27-74
+70            </intent-filter>
+71        </activity>
+72
+73        <!-- Login -->
+74        <activity
+74-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:37:9-40:58
+75            android:name="sae.openminds.LoginActivity"
+75-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:38:13-42
+76            android:exported="false"
+76-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:39:13-37
+77            android:windowSoftInputMode="adjustResize" />
+77-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:40:13-55
 78
-79        <provider
-79-->[androidx.emoji2:emoji2:1.3.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-80            android:name="androidx.startup.InitializationProvider"
-80-->[androidx.emoji2:emoji2:1.3.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-81            android:authorities="sae.openminds.androidx-startup"
-81-->[androidx.emoji2:emoji2:1.3.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-82            android:exported="false" >
-82-->[androidx.emoji2:emoji2:1.3.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-83            <meta-data
-83-->[androidx.emoji2:emoji2:1.3.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-84                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-84-->[androidx.emoji2:emoji2:1.3.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-85                android:value="androidx.startup" />
-85-->[androidx.emoji2:emoji2:1.3.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-86            <meta-data
-86-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\7be29bdba9e737d7b05260246a45b2cc\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-87                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-87-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\7be29bdba9e737d7b05260246a45b2cc\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-88                android:value="androidx.startup" />
-88-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\7be29bdba9e737d7b05260246a45b2cc\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-89            <meta-data
-89-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
-90                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-90-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
-91                android:value="androidx.startup" />
-91-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
-92        </provider>
-93
+79        <!-- Register -->
+80        <activity
+80-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:43:9-46:58
+81            android:name="sae.openminds.RegisterActivity"
+81-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:44:13-45
+82            android:exported="false"
+82-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:45:13-37
+83            android:windowSoftInputMode="adjustResize" />
+83-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:46:13-55
+84
+85        <!-- Main (Drawer) -->
+86        <activity
+86-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:49:9-51:40
+87            android:name="sae.openminds.MainActivity"
+87-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:50:13-41
+88            android:exported="false" />
+88-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:51:13-37
+89
+90        <!-- Notification receiver -->
+91        <receiver
+91-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:54:9-56:40
+92            android:name="sae.openminds.utils.NotificationReceiver"
+92-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:55:13-55
+93            android:exported="false" />
+93-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:56:13-37
 94        <receiver
-94-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
-95            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-95-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
-96            android:directBootAware="false"
-96-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
-97            android:enabled="true"
-97-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
-98            android:exported="true"
-98-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
-99            android:permission="android.permission.DUMP" >
-99-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
-100            <intent-filter>
-100-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
-101                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-101-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
-101-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
-102            </intent-filter>
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
-104                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
-104-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
-105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
-107                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-107-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
-107-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
-108            </intent-filter>
-109            <intent-filter>
-109-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
-110                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-110-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
-110-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\FlowUP\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
-111            </intent-filter>
-112        </receiver>
-113    </application>
-114
-115</manifest>
+94-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:58:9-64:20
+95            android:name="sae.openminds.utils.BootReceiver"
+95-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:59:13-47
+96            android:exported="true" >
+96-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:60:13-36
+97            <intent-filter>
+97-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:61:13-63:29
+98                <action android:name="android.intent.action.BOOT_COMPLETED" />
+98-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:62:17-79
+98-->C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\AndroidManifest.xml:62:25-76
+99            </intent-filter>
+100        </receiver>
+101
+102        <provider
+102-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+103            android:name="androidx.startup.InitializationProvider"
+103-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+104            android:authorities="sae.openminds.androidx-startup"
+104-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+105            android:exported="false" >
+105-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+106            <meta-data
+106-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+107                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+107-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+108                android:value="androidx.startup" />
+108-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+109            <meta-data
+109-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7be29bdba9e737d7b05260246a45b2cc\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+110                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+110-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7be29bdba9e737d7b05260246a45b2cc\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+111                android:value="androidx.startup" />
+111-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7be29bdba9e737d7b05260246a45b2cc\workspace\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+112            <meta-data
+112-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+113                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+113-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+114                android:value="androidx.startup" />
+114-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+115        </provider>
+116
+117        <receiver
+117-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+118            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+118-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+119            android:directBootAware="false"
+119-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+120            android:enabled="true"
+120-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+121            android:exported="true"
+121-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+122            android:permission="android.permission.DUMP" >
+122-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+123            <intent-filter>
+123-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+124                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+124-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+124-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+125            </intent-filter>
+126            <intent-filter>
+126-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+127                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+127-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+127-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+128            </intent-filter>
+129            <intent-filter>
+129-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+130                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+130-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+130-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+131            </intent-filter>
+132            <intent-filter>
+132-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+133                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+133-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+133-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+134            </intent-filter>
+135        </receiver>
+136    </application>
+137
+138</manifest>

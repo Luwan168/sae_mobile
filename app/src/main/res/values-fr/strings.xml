@@ -136,12 +136,12 @@
     <string name="stat_done">Terminées : %1$d</string>
     <string name="stat_avg">Score moyen : %1$d%%</string>
     <string name="stat_start">Commencez votre première formation !</string>
+    <string name="title_carte">Trouver les formations proches</string>
     <string name="carte_no_city">Renseignez votre ville pour trouver des formations proches</string>
     <string name="carte_near">Formations en présentiel près de %1$s</string>
     <string name="carte_no_nearby">Aucune formation à %1$s — toutes les formations en présentiel</string>
-    <string name="update_city_title">Ma localisation</string>
+    <string name="update_city_title">Recherche par ville</string>
     <string name="hint_city">Ville (ex : Paris)</string>
-    <string name="hint_address">Adresse complète (optionnel)</string>
     <string name="city_updated">Localisation mise à jour !</string>
     <string name="err_own_formation">Vous ne pouvez pas vous inscrire à votre propre formation.</string>
     <string name="no_students_yet">Aucun élève inscrit pour l instant.</string>
@@ -155,5 +155,6 @@
     <string name="theme_environment">Environnement</string>
     <string name="theme_inclusion">Inclusion</string>
     <string name="filter_by_theme">Filtrer par thème</string>
+    <string name="btn_search">Rechercher</string>
 
 </resources>

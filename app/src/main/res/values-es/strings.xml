@@ -26,7 +26,7 @@
     <string name="btn_cancel">Cancelar</string>
     <string name="btn_ok">OK</string>
     <string name="menu_home">Inicio</string>
-    <string name="menu_formations">Formaciones</string>
+    <string name="menu_formations">Formations</string>
     <string name="menu_entrainement">Quiz</string>
     <string name="menu_badges">Insignias</string>
     <string name="menu_actualites">Noticias</string>
@@ -47,6 +47,7 @@
     <string name="pending_tips_title">Consejos pendientes de aprobación</string>
     <string name="btn_approve">Aprobar</string>
     <string name="btn_reject">Rechazar</string>
+    <string name="btn_delete">Eliminar</string>
     <string name="no_pending_tips">No hay consejos pendientes.</string>
     <string name="err_admin_cannot_delete">Los administradores no pueden eliminar su cuenta.</string>
     <string name="create_formation_title">Crear una formación</string>
@@ -129,17 +130,18 @@
     <string name="success_password_updated">Contraseña actualizada correctamente.</string>
     <string name="success_account_deleted">Cuenta eliminada.</string>
     <string name="success_temp_password">Tu contraseña temporal: %1$s</string>
+    <string name="tip_deleted">Bonne práctica eliminada.</string>
 
     <string name="stat_formations">Formaciones seguidas: %1$d</string>
     <string name="stat_done">Completadas: %1$d</string>
     <string name="stat_avg">Puntuación media: %1$d%%</string>
     <string name="stat_start">¡Empieza tu primera formación!</string>
+    <string name="title_carte">Encontrar formaciones cercanas</string>
     <string name="carte_no_city">Ingresa tu ciudad para encontrar formaciones cercanas</string>
     <string name="carte_near">Formaciones presenciales cerca de %1$s</string>
     <string name="carte_no_nearby">Sin formaciones en %1$s — mostrando todas las presenciales</string>
-    <string name="update_city_title">Mi ubicación</string>
+    <string name="update_city_title">Buscar</string>
     <string name="hint_city">Ciudad (ej: Madrid)</string>
-    <string name="hint_address">Dirección completa (opcional)</string>
     <string name="city_updated">¡Ubicación actualizada!</string>
     <string name="err_own_formation">No puedes inscribirte en tu propia formación.</string>
     <string name="no_students_yet">Ningún alumno inscrito por el momento.</string>
@@ -147,9 +149,12 @@
     <string name="create_ressource_title">Crear un recurso</string>
     <string name="btn_create_ressource">Crear recurso</string>
     <string name="ressource_created">¡Recurso creado con éxito!</string>
-    <string name="theme_all">"      Todos los temas    "</string>
-    <string name="theme_environment">"    Medio ambiente   "</string>
-    <string name="theme_inclusion">"        Inclusión      "</string>
-    <string name="filter_by_theme">"        Filtrar por tema      "</string>
+
+    <!-- Themes -->
+    <string name="theme_all">Todos los temas</string>
+    <string name="theme_environment">Medio ambiente</string>
+    <string name="theme_inclusion">Inclusión</string>
+    <string name="filter_by_theme">Filtrar por tema</string>
+    <string name="btn_search">Buscar</string>
 
 </resources>

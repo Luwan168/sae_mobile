@@ -13,6 +13,7 @@
     <color name="text_primary">#1A1A1A</color>
     <color name="text_secondary">#757575</color>
     <color name="white">#FFFFFF</color>
+    <string name="_2026_openminds_project" translatable="false">© 2026 OpenMinds Project"</string>
     <string name="add_question_title">Add a question</string>
     <string name="admin_avg_score">Global avg. score:</string>
     <string name="admin_btn_manage_tips">Manage daily tips</string>
@@ -32,11 +33,13 @@
     <string name="btn_create_account">Register</string>
     <string name="btn_create_formation">Create training</string>
     <string name="btn_create_ressource">Create resource</string>
+    <string name="btn_delete">Delete</string>
     <string name="btn_enroll">Enroll</string>
     <string name="btn_login">Sign in</string>
     <string name="btn_ok">OK</string>
     <string name="btn_register">Create account</string>
     <string name="btn_reject">Reject</string>
+    <string name="btn_search">Search</string>
     <string name="btn_send">Send</string>
     <string name="btn_submit_quiz">Submit answers</string>
     <string name="btn_submit_tip">Submit tip</string>
@@ -47,8 +50,8 @@
     <string name="create_formation_title">Create a training</string>
     <string name="create_ressource_title">Create a resource</string>
     <string name="dialog_change_pass_title">Change password</string>
-    <string name="dialog_delete_msg">This action is irreversible. Delete your account?</string>
-    <string name="dialog_delete_title">Delete account</string>
+    <string name="dialog_delete_msg">This action is irreversible. Delete this tip?</string>
+    <string name="dialog_delete_title">Delete the tip</string>
     <string name="dialog_forgot_msg">Enter your email to receive a temporary password.</string>
     <string name="dialog_forgot_title">Reset password</string>
     <string name="empty_badges">No badges yet. Complete a training to earn one!</string>
@@ -68,9 +71,9 @@
     <string name="err_server">Server error. Please try again.</string>
     <string name="err_wrong_credentials">Incorrect email or password.</string>
     <string name="err_wrong_password">Incorrect current password.</string>
+    <string name="filter_by_theme">Filter by theme</string>
     <string name="formateur_enrollments_title">Enrollments in my trainings</string>
     <string name="formation_created">Training created successfully!</string>
-    <string name="hint_address">Full address (optional)</string>
     <string name="hint_choice">Choice %1$d</string>
     <string name="hint_city">City (e.g. Paris)</string>
     <string name="hint_correct_answer">Correct answer (copy exactly one of the choices)</string>
@@ -154,8 +157,13 @@
     <string name="success_account_deleted">Account deleted.</string>
     <string name="success_password_updated">Password updated successfully.</string>
     <string name="success_temp_password">Your temporary password: %1$s</string>
+    <string name="theme_all">All themes</string>
+    <string name="theme_environment">Environment</string>
+    <string name="theme_inclusion">Inclusion</string>
+    <string name="tip_deleted">Tip deleted.</string>
     <string name="tip_submitted">Your tip has been submitted for review!</string>
-    <string name="update_city_title">My location</string>
+    <string name="title_carte">Find nearby trainings</string>
+    <string name="update_city_title">Search</string>
     <string name="welcome_message">Hello, %1$s!</string>
     <style name="Theme.OpenMinds" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/green_primary</item>

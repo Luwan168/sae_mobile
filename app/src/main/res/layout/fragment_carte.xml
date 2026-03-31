@@ -1,37 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/green_surface" android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_surface"
+    android:orientation="vertical">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal" android:padding="12dp" android:gravity="center_vertical">
-        <TextView android:id="@+id/tvCityInfo" android:layout_width="0dp" android:layout_height="wrap_content"
-            android:layout_weight="1" android:textColor="@color/text_secondary" android:textSize="13sp"
+
+    <!-- Barre supérieure : info ville + bouton Recherche -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:elevation="2dp">
+        <TextView
+            android:id="@+id/tvCityInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
             android:visibility="gone"/>
-        <Button android:id="@+id/btnUpdateCity" android:layout_width="wrap_content" android:layout_height="36dp"
-            android:backgroundTint="@color/green_primary" android:text="@string/update_city_title"
-            android:textColor="@color/white" android:textSize="12sp" android:paddingStart="12dp" android:paddingEnd="12dp"/>
+        <Button
+            android:id="@+id/btnUpdateCity"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:backgroundTint="@color/green_primary"
+            android:text="@string/update_city_title"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"/>
     </LinearLayout>
 
-    <!-- Filtre par thème -->
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal" android:paddingStart="12dp" android:paddingEnd="12dp"
-        android:paddingBottom="8dp" android:gravity="center_vertical">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="@string/filter_by_theme" android:textSize="12sp" android:textColor="@color/text_secondary"
+    <!-- CARTE -->
+    <FrameLayout
+        android:id="@+id/mapContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5">
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabMyLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="12dp"
+            android:contentDescription="Ma position"
+            android:src="@drawable/ic_map"
+            app:backgroundTint="@color/green_primary"
+            app:tint="@color/white"
+            app:fabSize="mini" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFormation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/tvPopupTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <ImageButton
+                        android:id="@+id/btnClosePopup"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/ic_menu_close_clear_cancel"
+                        android:contentDescription="Fermer" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvPopupTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/green_primary"
+                    android:textSize="12sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/tvPopupLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvPopupDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="12sp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <Button
+                    android:id="@+id/btnPopupEnroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/green_primary"
+                    android:text="@string/btn_enroll"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <!-- FILTRE (Juste en dessous de la carte) -->
+    <LinearLayout
+        android:id="@+id/filterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:elevation="1dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_by_theme"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
             android:layout_marginEnd="8dp"/>
-        <Spinner android:id="@+id/spFilterTheme" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_dropdown" android:spinnerMode="dropdown"/>
+        <Spinner
+            android:id="@+id/spFilterTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"/>
     </LinearLayout>
 
-    <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_gravity="center"
-        android:indeterminateTint="@color/green_primary" android:visibility="gone"/>
-    <TextView android:id="@+id/tvEmpty" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_gravity="center"
-        android:layout_marginTop="32dp" android:text="@string/empty_formations"
-        android:textColor="@color/text_secondary" android:visibility="gone"/>
-    <ListView android:id="@+id/listViewCarte" android:layout_width="match_parent"
-        android:layout_height="0dp" android:layout_weight="1"
-        android:divider="@color/divider" android:dividerHeight="1dp" android:padding="8dp"/>
+    <!-- LISTE -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/green_primary"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/tvEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/empty_formations"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone"/>
+        <ListView
+            android:id="@+id/listViewCarte"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/divider"
+            android:dividerHeight="1dp"
+            android:padding="8dp"/>
+    </FrameLayout>
+
 </LinearLayout>

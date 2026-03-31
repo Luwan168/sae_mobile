@@ -19,11 +19,13 @@
     <string name="btn_create_account">S\'inscrire</string>
     <string name="btn_create_formation">Créer la formation</string>
     <string name="btn_create_ressource">Créer la ressource</string>
+    <string name="btn_delete">Supprimer</string>
     <string name="btn_enroll">S\'inscrire</string>
     <string name="btn_login">Se connecter</string>
     <string name="btn_ok">OK</string>
     <string name="btn_register">Créer un compte</string>
     <string name="btn_reject">Rejeter</string>
+    <string name="btn_search">Rechercher</string>
     <string name="btn_send">Envoyer</string>
     <string name="btn_submit_quiz">Soumettre les réponses</string>
     <string name="btn_submit_tip">Soumettre</string>
@@ -35,7 +37,7 @@
     <string name="create_ressource_title">Créer une ressource</string>
     <string name="dialog_change_pass_title">Changer le mot de passe</string>
     <string name="dialog_delete_msg">Cette action est irréversible. Supprimer votre compte ?</string>
-    <string name="dialog_delete_title">Supprimer le compte</string>
+    <string name="dialog_delete_title">Supprimer le conseil</string>
     <string name="dialog_forgot_msg">Entrez votre e-mail pour recevoir un mot de passe temporaire.</string>
     <string name="dialog_forgot_title">Réinitialiser le mot de passe</string>
     <string name="empty_badges">Aucun badge pour l\'instant. Terminez une formation pour en obtenir un !</string>
@@ -55,9 +57,9 @@
     <string name="err_server">Erreur serveur. Veuillez réessayer.</string>
     <string name="err_wrong_credentials">Email ou mot de passe incorrect.</string>
     <string name="err_wrong_password">Mot de passe actuel incorrect.</string>
+    <string name="filter_by_theme">Filtrer par thème</string>
     <string name="formateur_enrollments_title">Inscriptions à mes formations</string>
     <string name="formation_created">Formation créée avec succès !</string>
-    <string name="hint_address">Adresse complète (optionnel)</string>
     <string name="hint_choice">Choix %1$d</string>
     <string name="hint_city">Ville (ex : Paris)</string>
     <string name="hint_correct_answer">Bonne réponse (copiez exactement un des choix)</string>
@@ -141,7 +143,12 @@
     <string name="success_account_deleted">Compte supprimé.</string>
     <string name="success_password_updated">Mot de passe mis à jour.</string>
     <string name="success_temp_password">Votre mot de passe temporaire : %1$s</string>
+    <string name="theme_all">Tous les thèmes</string>
+    <string name="theme_environment">Environnement</string>
+    <string name="theme_inclusion">Inclusion</string>
+    <string name="tip_deleted">Bonne pratique supprimée.</string>
     <string name="tip_submitted">Votre conseil a été soumis pour validation !</string>
-    <string name="update_city_title">Ma localisation</string>
+    <string name="title_carte">Trouver les formations proches</string>
+    <string name="update_city_title">Recherche par ville</string>
     <string name="welcome_message">Bonjour, %1$s !</string>
 </resources>
