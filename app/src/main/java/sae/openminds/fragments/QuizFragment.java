@@ -17,8 +17,6 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.koushikdutta.ion.Ion;
 
 import org.json.JSONArray;
@@ -30,42 +28,43 @@ import java.util.Map;
 import sae.openminds.Config;
 import sae.openminds.R;
 
-// ============================================================
-//  app/src/main/java/sae/openminds/fragments/QuizFragment.java
-//  Affiche les questions d'un quiz et soumet les réponses
-// ============================================================
 public class QuizFragment extends Fragment {
 
-    private ProgressBar   progressBar;
-    private LinearLayout  layoutQuiz;
-    private TextView      tvEmpty, tvResult;
-    private Button        btnSubmit;
-    private ScrollView    scrollView;
-    private String        token;
-    private int           currentFormationId = -1;
+    private ProgressBar  progressBar;
+    private LinearLayout layoutQuiz;
+    private TextView     tvEmpty, tvResult;
+    private Button       btnSubmit;
+    private ScrollView   scrollView;
+    private String       token;
+    private int          currentFormationId = -1;
 
-    // Map question_id -> réponse sélectionnée
     private final Map<Integer, RadioGroup> radioGroups = new HashMap<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-        progressBar  = view.findViewById(R.id.progressBar);
-        layoutQuiz   = view.findViewById(R.id.layoutQuiz);
-        tvEmpty      = view.findViewById(R.id.tvEmpty);
-        tvResult     = view.findViewById(R.id.tvResult);
-        btnSubmit    = view.findViewById(R.id.btnSubmitQuiz);
-        scrollView   = view.findViewById(R.id.scrollView);
+        progressBar = view.findViewById(R.id.progressBar);
+        layoutQuiz  = view.findViewById(R.id.layoutQuiz);
+        tvEmpty     = view.findViewById(R.id.tvEmpty);
+        tvResult    = view.findViewById(R.id.tvResult);
+        btnSubmit   = view.findViewById(R.id.btnSubmitQuiz);
+        scrollView  = view.findViewById(R.id.scrollView);
 
-        token = requireActivity()
-                .getSharedPreferences(Config.PREFS_NAME, Context.MODE_PRIVATE)
-                .getString(Config.KEY_TOKEN, "");
+        SharedPreferences prefs = requireActivity()
+                .getSharedPreferences(Config.PREFS_NAME, Context.MODE_PRIVATE);
+        token = prefs.getString(Config.KEY_TOKEN, "");
 
-        // Récupérer l'ID de formation passé en argument si présent
+        // 1. Priorité aux arguments (navigation explicite)
         Bundle args = getArguments();
         if (args != null && args.containsKey("formation_id")) {
             currentFormationId = args.getInt("formation_id");
+        } else {
+            // 2. Fallback : formation active sauvegardée lors de l'inscription
+            currentFormationId = prefs.getInt("active_formation_id", -1);
+        }
+
+        if (currentFormationId != -1) {
             fetchQuiz(currentFormationId);
         } else {
             tvEmpty.setText(getString(R.string.select_formation_first));
@@ -74,6 +73,23 @@ public class QuizFragment extends Fragment {
 
         btnSubmit.setOnClickListener(v -> submitQuiz());
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Re-lire la formation active au cas où elle aurait changé après une inscription
+        SharedPreferences prefs = requireActivity()
+                .getSharedPreferences(Config.PREFS_NAME, Context.MODE_PRIVATE);
+        int savedId = prefs.getInt("active_formation_id", -1);
+
+        if (savedId != -1 && savedId != currentFormationId) {
+            currentFormationId = savedId;
+            tvResult.setVisibility(View.GONE);
+            btnSubmit.setVisibility(View.GONE);
+            tvEmpty.setVisibility(View.GONE);
+            fetchQuiz(currentFormationId);
+        }
     }
 
     public void loadQuizForFormation(int formationId) {
@@ -93,6 +109,11 @@ public class QuizFragment extends Fragment {
                 .asString()
                 .setCallback((e, result) -> {
                     progressBar.setVisibility(View.GONE);
+
+                    // LOG DE DEBUG - à supprimer une fois que tout fonctionne
+                    android.util.Log.d("QUIZ_DEBUG", "fetchQuiz Exception: " + e);
+                    android.util.Log.d("QUIZ_DEBUG", "fetchQuiz Result: " + result);
+
                     if (e != null || result == null) {
                         Toast.makeText(getActivity(), getString(R.string.err_server), Toast.LENGTH_SHORT).show();
                         return;
@@ -100,8 +121,10 @@ public class QuizFragment extends Fragment {
                     try {
                         JSONObject json   = new JSONObject(result);
                         String     status = json.getString("status");
-                        if (!status.equals("success")) { tvEmpty.setVisibility(View.VISIBLE); return; }
-
+                        if (!status.equals("success")) {
+                            tvEmpty.setVisibility(View.VISIBLE);
+                            return;
+                        }
                         JSONArray questions = json.getJSONArray("questions");
                         if (questions.length() == 0) {
                             tvEmpty.setVisibility(View.VISIBLE);
@@ -111,6 +134,7 @@ public class QuizFragment extends Fragment {
                         btnSubmit.setVisibility(View.VISIBLE);
 
                     } catch (Exception ex) {
+                        android.util.Log.e("QUIZ_DEBUG", "fetchQuiz parse error: " + ex.getMessage());
                         Toast.makeText(getActivity(), getString(R.string.err_server), Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -147,7 +171,6 @@ public class QuizFragment extends Fragment {
     private void submitQuiz() {
         if (currentFormationId == -1) return;
 
-        // Construire le JSON des réponses { "qId": "reponse", ... }
         JSONObject answers = new JSONObject();
         try {
             for (Map.Entry<Integer, RadioGroup> entry : radioGroups.entrySet()) {
@@ -176,27 +199,93 @@ public class QuizFragment extends Fragment {
                 .setCallback((e, result) -> {
                     progressBar.setVisibility(View.GONE);
                     btnSubmit.setEnabled(true);
+
+                    // LOG DE DEBUG - à supprimer une fois que tout fonctionne
+                    android.util.Log.d("QUIZ_DEBUG", "submitQuiz Exception: " + e);
+                    android.util.Log.d("QUIZ_DEBUG", "submitQuiz Result: " + result);
+
                     if (e != null || result == null) {
                         Toast.makeText(getActivity(), getString(R.string.err_server), Toast.LENGTH_SHORT).show();
                         return;
                     }
                     try {
-                        JSONObject json  = new JSONObject(result);
-                        int        score = json.getInt("score");
-                        boolean    badge = json.getBoolean("badge_awarded");
+                        JSONObject json   = new JSONObject(result);
+                        String     status = json.getString("status");
+                        if (!status.equals("success")) {
+                            Toast.makeText(getActivity(), getString(R.string.err_server), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        int     score = json.getInt("score");
+                        boolean badge = json.getBoolean("badge_awarded");
+
+                        // Afficher le feedback de correction si disponible
+                        if (json.has("details")) {
+                            JSONArray details = json.getJSONArray("details");
+                            showAnswerFeedback(details);
+                        }
+
+                        btnSubmit.setVisibility(View.GONE);
 
                         String msg = getString(R.string.quiz_result, score);
                         if (badge) msg += "\n" + getString(R.string.badge_awarded);
                         else if (score < 70) msg += "\n" + getString(R.string.quiz_failed);
-
                         tvResult.setText(msg);
                         tvResult.setVisibility(View.VISIBLE);
-                        layoutQuiz.setVisibility(View.GONE);
-                        btnSubmit.setVisibility(View.GONE);
 
                     } catch (Exception ex) {
+                        android.util.Log.e("QUIZ_DEBUG", "submitQuiz parse error: " + ex.getMessage());
                         Toast.makeText(getActivity(), getString(R.string.err_server), Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void showAnswerFeedback(JSONArray details) throws Exception {
+        // Construire un map question_id -> détail pour accès rapide
+        Map<Integer, JSONObject> detailMap = new HashMap<>();
+        for (int i = 0; i < details.length(); i++) {
+            JSONObject d = details.getJSONObject(i);
+            detailMap.put(d.getInt("question_id"), d);
+        }
+
+        for (Map.Entry<Integer, RadioGroup> entry : radioGroups.entrySet()) {
+            int        qId    = entry.getKey();
+            RadioGroup rg     = entry.getValue();
+            JSONObject detail = detailMap.get(qId);
+            if (detail == null) continue;
+
+            boolean isCorrect     = detail.getBoolean("is_correct");
+            String  correctAnswer = detail.getString("correct_answer");
+
+            // Désactiver tous les boutons radio (quiz terminé)
+            for (int i = 0; i < rg.getChildCount(); i++) {
+                rg.getChildAt(i).setEnabled(false);
+            }
+
+            // Colorer UNIQUEMENT le RadioButton sélectionné
+            int checkedId = rg.getCheckedRadioButtonId();
+            if (checkedId != -1) {
+                RadioButton selected = rg.findViewById(checkedId);
+                if (isCorrect) {
+                    // Bonne réponse : texte en vert + ✅
+                    selected.setTextColor(getResources().getColor(android.R.color.holo_green_dark, null));
+                    selected.setText("✅ " + selected.getText());
+                } else {
+                    // Mauvaise réponse : texte en rouge + ❌
+                    selected.setTextColor(getResources().getColor(android.R.color.holo_red_dark, null));
+                    selected.setText("❌ " + selected.getText());
+
+                    // Trouver et colorier en vert la bonne réponse
+                    for (int i = 0; i < rg.getChildCount(); i++) {
+                        RadioButton rb = (RadioButton) rg.getChildAt(i);
+                        if (rb.getText().toString().trim().equals(correctAnswer.trim())) {
+                            rb.setTextColor(getResources().getColor(android.R.color.holo_green_dark, null));
+                            rb.setText("✅ " + rb.getText());
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
