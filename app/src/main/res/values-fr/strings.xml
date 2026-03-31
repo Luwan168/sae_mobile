@@ -113,7 +113,7 @@
     <string name="dialog_change_pass_title">Changer le mot de passe</string>
     <string name="hint_old_pass">Mot de passe actuel</string>
     <string name="hint_new_pass">Nouveau mot de passe</string>
-    <string name="dialog_delete_title">Supprimer le conseil</string>
+    <string name="dialog_delete_title">Supprimer le compte</string>
     <string name="dialog_delete_msg">Cette action est irréversible. Supprimer votre compte ?</string>
     <string name="btn_confirm_delete">Supprimer</string>
     <string name="lang_english">English</string>
@@ -156,5 +156,19 @@
     <string name="theme_inclusion">Inclusion</string>
     <string name="filter_by_theme">Filtrer par thème</string>
     <string name="btn_search">Rechercher</string>
-
+    <string name="btn_leave_formation">Quitter la formation</string>
+    <string name="leave_formation_title">Quitter la formation</string>
+    <string name="leave_formation_msg">Êtes-vous sûr de vouloir quitter cette formation ? Votre progression sera perdue.</string>
+    <string name="leave_success">Vous avez quitté la formation.</string>
+    <string name="btn_end_formation">Marquer comme terminée</string>
+    <string name="end_formation_title">Terminer la formation</string>
+    <string name="end_formation_msg">Marquer cette formation comme terminée ? Les bénévoles ne pourront plus s\'inscrire.</string>
+    <string name="end_formation_success">Formation marquée comme terminée.</string>
+    <string name="lbl_places_left">%1$d / %2$d places restantes</string>
+    <string name="lbl_places_full">Complet</string>
+    <string name="hint_max_places">Nombre de places max (vide = illimité)</string>
+    <string name="err_formation_full">Cette formation est complète.</string>
+    <string name="err_too_many_active">Vous avez déjà %1$d formations en cours. Terminez-en une d\'abord.</string>
+    <string name="tip_approved">Conseil approuvé !</string>
+    <string name="tip_rejected">Conseil rejeté.</string>
 </resources>

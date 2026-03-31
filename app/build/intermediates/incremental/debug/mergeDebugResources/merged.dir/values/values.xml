@@ -2422,6 +2422,7 @@
     <item quantity="one"><ns2:g id="count">%d</ns2:g> new notification</item>
     <item quantity="other"><ns2:g id="count">%d</ns2:g> new notifications</item>
   </plurals>
+    <string name="_2026_openminds_project" translatable="false">© 2026 OpenMinds Project"</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
     <string name="abc_action_menu_overflow_description">More options</string>
@@ -2475,7 +2476,10 @@
     <string name="btn_create_account">Register</string>
     <string name="btn_create_formation">Create training</string>
     <string name="btn_create_ressource">Create resource</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_end_formation">Mark as completed</string>
     <string name="btn_enroll">Enroll</string>
+    <string name="btn_leave_formation">Leave training</string>
     <string name="btn_login">Sign in</string>
     <string name="btn_ok">OK</string>
     <string name="btn_register">Create account</string>
@@ -2510,16 +2514,21 @@
     <string name="empty_news">No news available.</string>
     <string name="empty_quiz">No questions for this training.</string>
     <string name="empty_resources">No resources available.</string>
+    <string name="end_formation_msg">Mark this training as completed? Students will no longer be able to enroll.</string>
+    <string name="end_formation_success">Training marked as completed.</string>
+    <string name="end_formation_title">End training</string>
     <string name="enroll_success">Enrolled successfully!</string>
     <string name="err_admin_cannot_delete">Administrators cannot delete their own account.</string>
     <string name="err_answer_all">Please answer all questions.</string>
     <string name="err_email_exists">This email is already registered.</string>
     <string name="err_email_not_found">No account found with this email.</string>
     <string name="err_fill_fields">Please fill in all required fields.</string>
+    <string name="err_formation_full">This training is full.</string>
     <string name="err_invalid_email">Please enter a valid email address.</string>
     <string name="err_own_formation">You cannot enroll in your own training.</string>
     <string name="err_password_length">Password must be at least 8 characters.</string>
     <string name="err_server">Server error. Please try again.</string>
+    <string name="err_too_many_active">You already have %1$d active trainings. Complete one first.</string>
     <string name="err_wrong_credentials">Incorrect email or password.</string>
     <string name="err_wrong_password">Incorrect current password.</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
@@ -2529,6 +2538,7 @@
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="filter_by_theme">Filter by theme</string>
     <string name="formateur_enrollments_title">Enrollments in my trainings</string>
     <string name="formation_created">Training created successfully!</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
@@ -2543,6 +2553,7 @@
     <string name="hint_formation_theme">Theme</string>
     <string name="hint_formation_title">Title</string>
     <string name="hint_lastname">Last name</string>
+    <string name="hint_max_places">Max participants (leave empty = unlimited)</string>
     <string name="hint_new_pass">New password</string>
     <string name="hint_old_pass">Current password</string>
     <string name="hint_password">Password</string>
@@ -2568,11 +2579,16 @@
     <string name="lbl_location">Location:</string>
     <string name="lbl_no_account">Don\'t have an account?</string>
     <string name="lbl_notifications">Enable notifications</string>
+    <string name="lbl_places_full">Full</string>
+    <string name="lbl_places_left">%1$d / %2$d places left</string>
     <string name="lbl_theme">Theme:</string>
     <string name="lbl_type">Type:</string>
     <string name="lbl_type_online">Online</string>
     <string name="lbl_type_presential">In-person</string>
     <string name="lbl_type_select">Type</string>
+    <string name="leave_formation_msg">Are you sure you want to leave this training? Your progress will be lost.</string>
+    <string name="leave_formation_title">Leave training</string>
+    <string name="leave_success">You have left the training.</string>
     <string name="login_subtitle">Welcome back!</string>
     <string name="login_title">Sign in</string>
     <string name="m3_exceed_max_badge_text_suffix" translatable="false"><ns2:g example="Some te" id="part of a long text">%1$s</ns2:g><ns2:g example="…" id="suffix">%2$s</ns2:g></string>
@@ -2751,6 +2767,12 @@
     <string name="success_account_deleted">Account deleted.</string>
     <string name="success_password_updated">Password updated successfully.</string>
     <string name="success_temp_password">Your temporary password: %1$s</string>
+    <string name="theme_all">All themes</string>
+    <string name="theme_environment">Environment</string>
+    <string name="theme_inclusion">Inclusion</string>
+    <string name="tip_approved">Tip approved!</string>
+    <string name="tip_deleted">Tip deleted.</string>
+    <string name="tip_rejected">Tip rejected.</string>
     <string name="tip_submitted">Your tip has been submitted for review!</string>
     <string name="update_city_title">My location</string>
     <string name="welcome_message">Hello, %1$s!</string>
