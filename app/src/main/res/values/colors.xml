@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- app/src/main/res/values/colors.xml -->
+<resources>
+    <color name="green_primary">#2E7D32</color>
+    <color name="green_primary_dark">#1B5E20</color>
+    <color name="green_light">#66BB6A</color>
+    <color name="green_surface">#F1F8E9</color>
+    <color name="green_accent">#A5D6A7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#757575</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="badge_gold">#FFC107</color>
+    <color name="status_done">#2E7D32</color>
+    <color name="status_ongoing">#1565C0</color>
+    <color name="status_abandoned">#C62828</color>
+</resources>

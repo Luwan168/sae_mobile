@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- app/src/main/res/layout/fragment_parametres.xml -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_surface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp" app:cardElevation="2dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+
+                <!-- Notifications -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+                    android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="@string/lbl_notifications"
+                        android:textColor="@color/text_primary" android:textSize="15sp" />
+                    <Switch android:id="@+id/switchNotifs"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginVertical="4dp" />
+
+                <!-- Langue -->
+                <TextView android:id="@+id/tvLanguage"
+                    android:layout_width="match_parent" android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/lbl_language"
+                    android:textColor="@color/text_primary" android:textSize="15sp"
+                    android:drawableEnd="@drawable/ic_settings" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginVertical="4dp" />
+
+                <!-- Changer mot de passe -->
+                <TextView android:id="@+id/tvChangePassword"
+                    android:layout_width="match_parent" android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/lbl_change_password"
+                    android:textColor="@color/text_primary" android:textSize="15sp" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginVertical="4dp" />
+
+                <!-- Supprimer compte -->
+                <TextView android:id="@+id/tvDeleteAccount"
+                    android:layout_width="match_parent" android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/lbl_delete_account"
+                    android:textColor="@color/status_abandoned" android:textSize="15sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

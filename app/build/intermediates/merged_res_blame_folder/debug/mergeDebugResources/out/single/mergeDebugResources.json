@@ -1,0 +1,206 @@
+[
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_admin.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_admin.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_actualites.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_actualites.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_quiz.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_quiz.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_item_enrollment.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/item_enrollment.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_launcher_background.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_activity_splash.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_item_formation.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/item_formation.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_logout.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_logout.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_person.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_person.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_book.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_book.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_home.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_home.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_badge.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_badge.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_item_ressource.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/item_ressource.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_quiz.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_quiz.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_parametres.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_parametres.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_map.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_map.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_news.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_news.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_badges.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_badges.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/xml_data_extraction_rules.xml.flat",
+        "source": "sae.openminds.app-main-38:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_admin.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_admin.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_school.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_school.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/menu_drawer_menu.xml.flat",
+        "source": "sae.openminds.app-main-38:/menu/drawer_menu.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_formations.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_formations.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_ressources.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_ressources.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_leaf.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_leaf.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_nav_header.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/nav_header.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_activity_register.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/activity_register.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_teacher.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_teacher.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/xml_backup_rules.xml.flat",
+        "source": "sae.openminds.app-main-38:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_activity_main.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_activity_login.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/activity_login.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_carte.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_carte.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_item_actualite.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/item_actualite.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_profil.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_profil.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_formateur.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_formateur.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_item_badge.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/item_badge.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_accueil.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_accueil.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/drawable_ic_settings.xml.flat",
+        "source": "sae.openminds.app-main-38:/drawable/ic_settings.xml"
+    }
+]

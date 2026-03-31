@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- app/src/main/res/menu/drawer_menu.xml
+     Les items nav_espace_formateur et nav_administration sont masqués
+     par code dans NavigationDrawerHelper selon le rôle -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Accessible à tous -->
+    <group android:id="@+id/group_main" android:checkableBehavior="single">
+        <item android:id="@+id/nav_accueil"
+            android:title="@string/menu_home"
+            android:icon="@drawable/ic_home" />
+        <item android:id="@+id/nav_formations"
+            android:title="@string/menu_formations"
+            android:icon="@drawable/ic_school" />
+        <item android:id="@+id/nav_entrainement"
+            android:title="@string/menu_entrainement"
+            android:icon="@drawable/ic_quiz" />
+        <item android:id="@+id/nav_badges"
+            android:title="@string/menu_badges"
+            android:icon="@drawable/ic_badge" />
+        <item android:id="@+id/nav_actualites"
+            android:title="@string/menu_actualites"
+            android:icon="@drawable/ic_news" />
+        <item android:id="@+id/nav_mes_ressources"
+            android:title="@string/menu_ressources"
+            android:icon="@drawable/ic_book" />
+        <item android:id="@+id/nav_carte"
+            android:title="@string/menu_carte"
+            android:icon="@drawable/ic_map" />
+        <item android:id="@+id/nav_mon_profil"
+            android:title="@string/menu_profil"
+            android:icon="@drawable/ic_person" />
+    </group>
+
+    <!-- Formateur + Admin (masqué par code si rôle = bénévole) -->
+    <group android:id="@+id/group_pro" android:checkableBehavior="single">
+        <item android:id="@+id/nav_espace_formateur"
+            android:title="@string/menu_formateur"
+            android:icon="@drawable/ic_teacher"
+            android:visible="false" />
+        <item android:id="@+id/nav_administration"
+            android:title="@string/menu_admin"
+            android:icon="@drawable/ic_admin"
+            android:visible="false" />
+    </group>
+
+    <!-- Paramètres + déconnexion -->
+    <group android:id="@+id/group_bottom" android:checkableBehavior="single">
+        <item android:id="@+id/nav_parametres"
+            android:title="@string/menu_settings"
+            android:icon="@drawable/ic_settings" />
+        <item android:id="@+id/nav_logout"
+            android:title="@string/menu_logout"
+            android:icon="@drawable/ic_logout" />
+    </group>
+
+</menu>

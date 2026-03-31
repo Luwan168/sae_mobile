@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/green_surface" android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="12dp" android:gravity="center_vertical">
+        <TextView android:id="@+id/tvCityInfo" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:textColor="@color/text_secondary" android:textSize="13sp"
+            android:visibility="gone"/>
+        <Button android:id="@+id/btnUpdateCity" android:layout_width="wrap_content" android:layout_height="36dp"
+            android:backgroundTint="@color/green_primary" android:text="@string/update_city_title"
+            android:textColor="@color/white" android:textSize="12sp" android:paddingStart="12dp" android:paddingEnd="12dp"/>
+    </LinearLayout>
+
+    <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        android:indeterminateTint="@color/green_primary" android:visibility="gone"/>
+    <TextView android:id="@+id/tvEmpty" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        android:layout_marginTop="32dp" android:text="@string/empty_formations"
+        android:textColor="@color/text_secondary" android:visibility="gone"/>
+    <ListView android:id="@+id/listViewCarte" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1"
+        android:divider="@color/divider" android:dividerHeight="1dp" android:padding="8dp"/>
+</LinearLayout>

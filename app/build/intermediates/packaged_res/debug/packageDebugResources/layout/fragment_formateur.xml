@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/green_surface" android:orientation="vertical">
+
+    <TextView android:id="@+id/tvFormateurTitle" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:background="@color/green_primary"
+        android:padding="16dp" android:textColor="@color/white" android:textSize="16sp" android:textStyle="bold"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="8dp">
+        <Button android:id="@+id/btnCreateFormation" android:layout_width="0dp" android:layout_height="40dp"
+            android:layout_weight="1" android:layout_marginEnd="4dp" android:backgroundTint="@color/green_primary"
+            android:text="@string/btn_create_formation" android:textColor="@color/white" android:textSize="11sp"/>
+        <Button android:id="@+id/btnAddQuestion" android:layout_width="0dp" android:layout_height="40dp"
+            android:layout_weight="1" android:layout_marginStart="4dp" android:layout_marginEnd="4dp"
+            android:backgroundTint="@color/green_light" android:text="@string/btn_add_question"
+            android:textColor="@color/white" android:textSize="11sp"/>
+        <Button android:id="@+id/btnCreateRessource" android:layout_width="0dp" android:layout_height="40dp"
+            android:layout_weight="1" android:layout_marginStart="4dp"
+            android:backgroundTint="@color/badge_gold" android:text="@string/btn_create_ressource"
+            android:textColor="@color/green_primary_dark" android:textSize="11sp"/>
+    </LinearLayout>
+
+    <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        android:indeterminateTint="@color/green_primary" android:visibility="gone"/>
+    <TextView android:id="@+id/tvEmpty" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        android:layout_marginTop="24dp" android:text="@string/empty_formations"
+        android:textColor="@color/text_secondary" android:visibility="gone"/>
+    <ListView android:id="@+id/listViewFormations" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1"
+        android:divider="@color/divider" android:dividerHeight="1dp" android:padding="8dp"/>
+</LinearLayout>
