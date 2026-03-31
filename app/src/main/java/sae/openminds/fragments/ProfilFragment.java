@@ -20,22 +20,30 @@ import com.google.gson.reflect.TypeToken;
 import com.koushikdutta.ion.Ion;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import sae.openminds.Config;
 import sae.openminds.R;
+import sae.openminds.adapters.BadgeAdapter;
 import sae.openminds.adapters.EnrollmentAdapter;
+import sae.openminds.models.Badge;
 import sae.openminds.models.Enrollment;
 
 // ============================================================
 //  app/src/main/java/sae/openminds/fragments/ProfilFragment.java
 // ============================================================
 public class ProfilFragment extends Fragment {
+    private ProgressBar progressBar;
+    private ListView listViewBadges;
+    private ListView lvBadges; // Changé de RecyclerView à ListView
+    private BadgeAdapter badgeAdapter;
+    private List<Badge> badgeList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profil, container, false);
-
+        progressBar  = view.findViewById(R.id.progressBar);
         TextView    tvName      = view.findViewById(R.id.tvName);
         TextView    tvEmail     = view.findViewById(R.id.tvEmail);
         TextView    tvRole      = view.findViewById(R.id.tvRole);
@@ -44,10 +52,15 @@ public class ProfilFragment extends Fragment {
         TextView    tvEmpty     = view.findViewById(R.id.tvEmpty);
         ProgressBar progressBar = view.findViewById(R.id.progressBar);
         ListView    listView    = view.findViewById(R.id.listViewEnrollments);
+        lvBadges = view.findViewById(R.id.lv_badges_profil);
+        listViewBadges = view.findViewById(R.id.lv_badges_profil);
+        badgeAdapter = new BadgeAdapter(getContext(), badgeList);
+        lvBadges.setAdapter(badgeAdapter);
 
         SharedPreferences prefs = requireActivity()
                 .getSharedPreferences(Config.PREFS_NAME, Context.MODE_PRIVATE);
         String token     = prefs.getString(Config.KEY_TOKEN,     "");
+        fetchBadges(token);
         String firstname = prefs.getString(Config.KEY_FIRSTNAME, "");
         String lastname  = prefs.getString(Config.KEY_LASTNAME,  "");
         String email     = prefs.getString(Config.KEY_EMAIL,     "");
@@ -89,10 +102,51 @@ public class ProfilFragment extends Fragment {
                         } else {
                             listView.setAdapter(new EnrollmentAdapter(getActivity(), enrollments));
                         }
+
+                        if (json.has("badges")) {
+                            Type badgeType = new TypeToken<List<Badge>>(){}.getType();
+                            List<Badge> badges = new Gson().fromJson(json.getAsJsonArray("badges"), badgeType);
+
+                            if (badges != null && !badges.isEmpty()) {
+                                badgeList.clear();
+                                badgeList.addAll(badges);
+                                badgeAdapter.notifyDataSetChanged();
+                            }
+                        }
+
                     } catch (Exception ex) {
                         tvEmpty.setVisibility(View.VISIBLE);
                     }
                 });
         return view;
+    }
+
+
+    private void fetchBadges(String token) {
+
+        progressBar.setVisibility(View.VISIBLE);
+
+        Ion.with(this).load("POST", Config.BASE_URL + "getBadges.php")
+                .setBodyParameter("token", token)
+                .asString()
+                .setCallback((e, result) -> {
+                    progressBar.setVisibility(View.GONE);
+                    if (e != null || result == null) return;
+
+                    try {
+                        JsonObject json = JsonParser.parseString(result).getAsJsonObject();
+                        if (!json.get("status").getAsString().equals("success")) return;
+
+                        Type listType = new TypeToken<List<Badge>>(){}.getType();
+                        List<Badge> badges = new Gson().fromJson(json.getAsJsonArray("badges"), listType);
+
+                        if (badges != null && !badges.isEmpty()) {
+                            // On utilise notre nouvelle listView spécifique aux badges
+                            listViewBadges.setAdapter(new BadgeAdapter(getActivity(), badges));
+                        }
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                });
     }
 }

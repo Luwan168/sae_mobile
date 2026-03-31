@@ -66,13 +66,13 @@ id listViewCarte
 id listViewEnrollments
 id listViewFormations
 id listViewRessources
+id lv_badges_profil
 id mapContainer
 id mapView
 id nav_about
 id nav_accueil
 id nav_actualites
 id nav_administration
-id nav_badges
 id nav_carte
 id nav_entrainement
 id nav_espace_formateur

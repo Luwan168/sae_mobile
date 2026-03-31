@@ -140,8 +140,6 @@ public class NavigationDrawerHelper implements NavigationView.OnNavigationItemSe
             ma.loadFragment(new FormationsFragment(), activity.getString(R.string.menu_formations));
         } else if (id == R.id.nav_entrainement) {
             ma.loadFragment(new QuizFragment(),       activity.getString(R.string.menu_entrainement));
-        } else if (id == R.id.nav_badges) {
-            ma.loadFragment(new BadgesFragment(),     activity.getString(R.string.menu_badges));
         } else if (id == R.id.nav_actualites) {
             ma.loadFragment(new ActualitesFragment(), activity.getString(R.string.menu_actualites));
         } else if (id == R.id.nav_mes_ressources) {

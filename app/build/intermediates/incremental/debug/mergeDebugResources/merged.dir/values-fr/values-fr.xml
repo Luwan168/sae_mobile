@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d nouvelle notification</item>
+    <item quantity="other">%d nouvelles notifications</item>
+  </plurals>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"Revenir à l\'accueil"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"Revenir en haut de la page"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"Autres options"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"OK"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"Tout afficher"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"Sélectionner une application"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"NON"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"OUI"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"supprimer"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"entrée"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Fonction+"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Méta+"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Maj+"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"espace"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"Rechercher…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"Effacer la requête"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"Requête de recherche"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"Rechercher"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"Envoyer la requête"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"Recherche vocale"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Partager avec"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Partager avec <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Réduire"</string>
+    <string name="add_question_title">Ajouter une question</string>
+    <string name="admin_avg_score">Score moyen global :</string>
+    <string name="admin_btn_manage_tips">Gérer les bonnes pratiques</string>
+    <string name="admin_moderate_title">Activer / désactiver les bonnes pratiques</string>
+    <string name="admin_moderation_title">Modération du contenu</string>
+    <string name="admin_stats_title">Statistiques globales</string>
+    <string name="admin_total_enrollments">Inscriptions :</string>
+    <string name="admin_total_formations">Formations :</string>
+    <string name="admin_total_users">Utilisateurs :</string>
+    <string name="already_enrolled">Vous êtes déjà inscrit à cette formation.</string>
+    <string name="app_name">OpenMinds</string>
+    <string name="badge_awarded">🎉 Félicitations ! Vous avez obtenu un badge !</string>
+    <string name="bottomsheet_action_collapse">Réduire la bottom sheet</string>
+    <string name="bottomsheet_action_expand">Développer la bottom sheet</string>
+    <string name="bottomsheet_action_expand_halfway">Développer en entier</string>
+    <string name="bottomsheet_drag_handle_content_description">Poignée de déplacement</string>
+    <string name="btn_add_question">Ajouter la question</string>
+    <string name="btn_approve">Approuver</string>
+    <string name="btn_cancel">Annuler</string>
+    <string name="btn_confirm_delete">Supprimer</string>
+    <string name="btn_create_account">S\'inscrire</string>
+    <string name="btn_create_formation">Créer la formation</string>
+    <string name="btn_create_ressource">Créer la ressource</string>
+    <string name="btn_delete">Supprimer</string>
+    <string name="btn_end_formation">Marquer comme terminée</string>
+    <string name="btn_enroll">S\'inscrire</string>
+    <string name="btn_leave_formation">Quitter la formation</string>
+    <string name="btn_login">Se connecter</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_register">Créer un compte</string>
+    <string name="btn_reject">Rejeter</string>
+    <string name="btn_search">Rechercher</string>
+    <string name="btn_send">Envoyer</string>
+    <string name="btn_submit_quiz">Soumettre les réponses</string>
+    <string name="btn_submit_tip">Soumettre</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"Répondre"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"Vidéo"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"Refuser"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"Raccrocher"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"Appel entrant"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Appel en cours"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"Filtrage d\'un appel entrant"</string>
+    <string name="carte_near">Formations en présentiel près de %1$s</string>
+    <string name="carte_no_city">Renseignez votre ville pour trouver des formations proches</string>
+    <string name="carte_no_nearby">Aucune formation à %1$s — toutes les formations en présentiel</string>
+    <string name="character_counter_content_description">Caractères saisis %1$d sur %2$d</string>
+    <string name="character_counter_overflowed_content_description">Nombre maximal de caractères dépassé : %1$d sur %2$d</string>
+    <string name="city_updated">Localisation mise à jour !</string>
+    <string name="clear_text_end_icon_content_description">Effacer le texte</string>
+    <string name="create_formation_title">Créer une formation</string>
+    <string name="create_ressource_title">Créer une ressource</string>
+    <string name="dialog_change_pass_title">Changer le mot de passe</string>
+    <string name="dialog_delete_msg">Cette action est irréversible. Supprimer votre compte ?</string>
+    <string name="dialog_delete_title">Supprimer le compte</string>
+    <string name="dialog_forgot_msg">Entrez votre e-mail pour recevoir un mot de passe temporaire.</string>
+    <string name="dialog_forgot_title">Réinitialiser le mot de passe</string>
+    <string name="empty_badges">Aucun badge pour l\'instant. Terminez une formation pour en obtenir un !</string>
+    <string name="empty_formations">Aucune formation disponible.</string>
+    <string name="empty_news">Aucune actualité disponible.</string>
+    <string name="empty_quiz">Aucune question pour cette formation.</string>
+    <string name="empty_resources">Aucune ressource disponible.</string>
+    <string name="end_formation_msg">Marquer cette formation comme terminée ? Les bénévoles ne pourront plus s\'inscrire.</string>
+    <string name="end_formation_success">Formation marquée comme terminée.</string>
+    <string name="end_formation_title">Terminer la formation</string>
+    <string name="enroll_success">Inscription réussie !</string>
+    <string name="err_admin_cannot_delete">Les administrateurs ne peuvent pas supprimer leur compte.</string>
+    <string name="err_answer_all">Veuillez répondre à toutes les questions.</string>
+    <string name="err_email_exists">Cet e-mail est déjà utilisé.</string>
+    <string name="err_email_not_found">Aucun compte trouvé avec cet e-mail.</string>
+    <string name="err_fill_fields">Veuillez remplir tous les champs obligatoires.</string>
+    <string name="err_formation_full">Cette formation est complète.</string>
+    <string name="err_invalid_email">Veuillez entrer une adresse e-mail valide.</string>
+    <string name="err_own_formation">Vous ne pouvez pas vous inscrire à votre propre formation.</string>
+    <string name="err_password_length">Le mot de passe doit contenir au moins 8 caractères.</string>
+    <string name="err_server">Erreur serveur. Veuillez réessayer.</string>
+    <string name="err_too_many_active">Vous avez déjà %1$d formations en cours. Terminez-en une d\'abord.</string>
+    <string name="err_wrong_credentials">Email ou mot de passe incorrect.</string>
+    <string name="err_wrong_password">Mot de passe actuel incorrect.</string>
+    <string name="error_a11y_label">Erreur : Non valide</string>
+    <string name="error_icon_content_description">Erreur</string>
+    <string name="exposed_dropdown_menu_content_description">Afficher le menu déroulant</string>
+    <string name="filter_by_theme">Filtrer par thème</string>
+    <string name="formateur_enrollments_title">Inscriptions à mes formations</string>
+    <string name="formation_created">Formation créée avec succès !</string>
+    <string name="hint_choice">Choix %1$d</string>
+    <string name="hint_city">Ville (ex : Paris)</string>
+    <string name="hint_correct_answer">Bonne réponse (copiez exactement un des choix)</string>
+    <string name="hint_email">Adresse e-mail</string>
+    <string name="hint_firstname">Prénom</string>
+    <string name="hint_formation_description">Description</string>
+    <string name="hint_formation_location">Lieu (si présentiel)</string>
+    <string name="hint_formation_theme">Thème</string>
+    <string name="hint_formation_title">Titre</string>
+    <string name="hint_lastname">Nom</string>
+    <string name="hint_max_places">Nombre de places max (vide = illimité)</string>
+    <string name="hint_new_pass">Nouveau mot de passe</string>
+    <string name="hint_old_pass">Mot de passe actuel</string>
+    <string name="hint_password">Mot de passe</string>
+    <string name="hint_phone">Téléphone (optionnel)</string>
+    <string name="hint_question">Texte de la question</string>
+    <string name="hint_tip_content">Votre conseil (ex : Éteignez les lumières en partant)</string>
+    <string name="hint_tip_theme">Thème (environnement, inclusion…)</string>
+    <string name="icon_content_description">Icône de la boîte de dialogue</string>
+    <string name="item_view_role_description">Onglet</string>
+    <string name="lang_english">English</string>
+    <string name="lang_french">Français</string>
+    <string name="lang_spanish">Español</string>
+    <string name="lbl_article">Article</string>
+    <string name="lbl_avg_score">Score moyen :</string>
+    <string name="lbl_back_login">Retour à la connexion</string>
+    <string name="lbl_change_password">Changer le mot de passe</string>
+    <string name="lbl_daily_tip">Bonne pratique du jour</string>
+    <string name="lbl_delete_account">Supprimer le compte</string>
+    <string name="lbl_forgot_password">Mot de passe oublié ?</string>
+    <string name="lbl_formations_done">Terminées :</string>
+    <string name="lbl_guide">Guide</string>
+    <string name="lbl_language">Langue</string>
+    <string name="lbl_location">Lieu :</string>
+    <string name="lbl_no_account">Pas encore de compte ?</string>
+    <string name="lbl_notifications">Activer les notifications</string>
+    <string name="lbl_places_full">Complet</string>
+    <string name="lbl_places_left">%1$d / %2$d places restantes</string>
+    <string name="lbl_theme">Thème :</string>
+    <string name="lbl_type">Type :</string>
+    <string name="lbl_type_online">En ligne</string>
+    <string name="lbl_type_presential">Présentiel</string>
+    <string name="lbl_type_select">Type</string>
+    <string name="leave_formation_msg">Êtes-vous sûr de vouloir quitter cette formation ? Votre progression sera perdue.</string>
+    <string name="leave_formation_title">Quitter la formation</string>
+    <string name="leave_success">Vous avez quitté la formation.</string>
+    <string name="login_subtitle">Bienvenue !</string>
+    <string name="login_title">Connexion</string>
+    <string name="m3_loading_indicator_content_description">Chargement…</string>
+    <string name="material_clock_toggle_content_description">Sélectionner le format AM ou PM</string>
+    <string name="material_hour_24h_suffix">%1$s heures</string>
+    <string name="material_hour_selection">Sélectionnez une heure</string>
+    <string name="material_hour_suffix">%1$s h</string>
+    <string name="material_minute_selection">Sélectionner des minutes</string>
+    <string name="material_minute_suffix">%1$s min</string>
+    <string name="material_slider_range_end">Fin de plage</string>
+    <string name="material_slider_range_start">Début de plage</string>
+    <string name="material_slider_value">Valeur</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_clock_mode_description">Passer en mode horloge pour la saisie de l\'heure.</string>
+    <string name="material_timepicker_hour">Heure</string>
+    <string name="material_timepicker_minute">Minute</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="material_timepicker_select_time">Sélectionner l\'heure</string>
+    <string name="material_timepicker_text_input_mode_description">Passer en mode saisie de texte pour la saisie de l\'heure.</string>
+    <string name="menu_about">À propos</string>
+    <string name="menu_actualites">Actualités</string>
+    <string name="menu_admin">Administration</string>
+    <string name="menu_badges">Badges</string>
+    <string name="menu_carte">Formations proches</string>
+    <string name="menu_entrainement">Quiz</string>
+    <string name="menu_formateur">Mes formations</string>
+    <string name="menu_formations">Formations</string>
+    <string name="menu_home">Accueil</string>
+    <string name="menu_logout">Déconnexion</string>
+    <string name="menu_profil">Mon profil</string>
+    <string name="menu_ressources">Ressources</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="mtrl_badge_numberless_content_description">Nouvelle notification</string>
+    <string name="mtrl_checkbox_state_description_checked">Cochée</string>
+    <string name="mtrl_checkbox_state_description_indeterminate">Partiellement cochée</string>
+    <string name="mtrl_checkbox_state_description_unchecked">Non cochée</string>
+    <string name="mtrl_chip_close_icon_content_description">Supprimer %1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description" ns2:ignore="PluralsCandidate">Plus de %1$d nouvelles notifications</string>
+    <string name="mtrl_picker_a11y_next_month">Passer au mois suivant</string>
+    <string name="mtrl_picker_a11y_prev_month">Passer au mois précédent</string>
+    <string name="mtrl_picker_announce_current_range_selection">Date de début sélectionnée : %1$s – Date de fin sélectionnée : %2$s</string>
+    <string name="mtrl_picker_announce_current_selection">Sélection actuelle : %1$s</string>
+    <string name="mtrl_picker_announce_current_selection_none">aucune</string>
+    <string name="mtrl_picker_cancel">Annuler</string>
+    <string name="mtrl_picker_confirm">OK</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Sélectionnez une date</string>
+    <string name="mtrl_picker_date_header_unselected">Date sélectionnée</string>
+    <string name="mtrl_picker_day_of_week_column_header">%1$s</string>
+    <string name="mtrl_picker_end_date_description">Date de fin : %1$s</string>
+    <string name="mtrl_picker_invalid_format">Format incorrect.</string>
+    <string name="mtrl_picker_invalid_format_example">Exemple : %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Utiliser %1$s</string>
+    <string name="mtrl_picker_invalid_range">Plage non valide.</string>
+    <string name="mtrl_picker_navigate_to_current_year_description">Accéder à l\'année en cours : %1$d</string>
+    <string name="mtrl_picker_navigate_to_year_description">Accéder à l\'année %1$d</string>
+    <string name="mtrl_picker_out_of_range">Hors limite : %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Date de début – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – Date de fin</string>
+    <string name="mtrl_picker_range_header_selected">%1$s - %2$s</string>
+    <string name="mtrl_picker_range_header_title">Sélectionnez une période</string>
+    <string name="mtrl_picker_range_header_unselected">Date de début – Date de fin</string>
+    <string name="mtrl_picker_save">Enregistrer</string>
+    <string name="mtrl_picker_start_date_description">Date de début : %1$s</string>
+    <string name="mtrl_picker_text_input_date_hint">Date</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">Date de fin</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Date de début</string>
+    <string name="mtrl_picker_text_input_day_abbr">j</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">a</string>
+    <string name="mtrl_picker_today_description">Aujourd\'hui : %1$s</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Passer au mode de saisie Agenda</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Passer à la vue d\'agenda</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Passer au mode de saisie Texte</string>
+    <string name="mtrl_picker_toggle_to_year_selection">Passer à la vue des années</string>
+    <string name="mtrl_picker_toggled_to_day_selection">Vue \"Agenda\" activée</string>
+    <string name="mtrl_picker_toggled_to_year_selection">Vue \"Année\" activée</string>
+    <string name="mtrl_timepicker_cancel">Annuler</string>
+    <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="navigation_drawer_close">Fermer le menu</string>
+    <string name="navigation_drawer_open">Ouvrir le menu</string>
+    <string name="no_pending_tips">Aucun conseil en attente.</string>
+    <string name="no_students_yet">Aucun élève inscrit pour l instant.</string>
+    <string name="notif_channel_name">Bonnes pratiques quotidiennes</string>
+    <string name="notif_default_tip">Chaque petit geste compte pour l\'environnement !</string>
+    <string name="notif_title">OpenMinds – Bonne pratique</string>
+    <string name="obtained_on">Obtenu le : %1$s</string>
+    <string name="password_toggle_content_description">Afficher le mot de passe</string>
+    <string name="pending_tips_title">Conseils en attente de validation</string>
+    <string name="question_added">Question ajoutée !</string>
+    <string name="quiz_failed">Score inférieur à 70%%. Continuez à vous entraîner !</string>
+    <string name="quiz_result">Votre score : %1$d%%</string>
+    <string name="register_success">Compte créé ! Veuillez vous connecter.</string>
+    <string name="register_title">Créer un compte</string>
+    <string name="ressource_created">Ressource créée avec succès !</string>
+    <string name="role_admin">Administrateur</string>
+    <string name="role_benevole">Bénévole</string>
+    <string name="role_formateur">Formateur</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"Rechercher"</string>
+    <string name="searchview_clear_text_content_description">Effacer le texte</string>
+    <string name="searchview_navigation_content_description">Retour</string>
+    <string name="select_formation_first">Veuillez d\'abord sélectionner une formation.</string>
+    <string name="select_formation_label">Sélectionner une formation</string>
+    <string name="side_sheet_accessibility_pane_title">Feuille latérale</string>
+    <string name="splash_subtitle">Plateforme de formation citoyenne</string>
+    <string name="stat_avg">Score moyen : %1$d%%</string>
+    <string name="stat_done">Terminées : %1$d</string>
+    <string name="stat_formations">Formations suivies : %1$d</string>
+    <string name="stat_start">Commencez votre première formation !</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="students_enrolled_in">Élèves inscrits à %1$s</string>
+    <string name="submit_tip_title">Proposer une bonne pratique</string>
+    <string name="success_account_deleted">Compte supprimé.</string>
+    <string name="success_password_updated">Mot de passe mis à jour.</string>
+    <string name="success_temp_password">Votre mot de passe temporaire : %1$s</string>
+    <string name="theme_all">Tous les thèmes</string>
+    <string name="theme_environment">Environnement</string>
+    <string name="theme_inclusion">Inclusion</string>
+    <string name="tip_approved">Conseil approuvé !</string>
+    <string name="tip_deleted">Bonne pratique supprimée.</string>
+    <string name="tip_rejected">Conseil rejeté.</string>
+    <string name="tip_submitted">Votre conseil a été soumis pour validation !</string>
+    <string name="title_carte">Trouver les formations proches</string>
+    <string name="update_city_title">Recherche par ville</string>
+    <string name="welcome_message">Bonjour, %1$s !</string>
+</resources>

@@ -104,5 +104,11 @@
         android:divider="@color/divider"
         android:dividerHeight="1dp"
         android:padding="8dp" />
+    <ListView
+        android:id="@+id/lv_badges_profil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp" />
 
 </LinearLayout>

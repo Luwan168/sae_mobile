@@ -1,41 +1,41 @@
-sae.openminds.app-lifecycle-runtime-2.6.2-0 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\2798ce79ccd04760da129a45a6ae0bf4\workspace\transformed\lifecycle-runtime-2.6.2\res
-sae.openminds.app-core-ktx-1.16.0-1 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\2af0fdbe3d6f6189e6abe90792f468d4\workspace\transformed\core-ktx-1.16.0\res
-sae.openminds.app-dynamicanimation-1.1.0-2 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\308c098060b2b75b496e8eec95b2aac7\workspace\transformed\dynamicanimation-1.1.0\res
-sae.openminds.app-savedstate-1.2.1-3 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\37202361d623ad1b9d0cffa0fc0b756c\workspace\transformed\savedstate-1.2.1\res
-sae.openminds.app-lifecycle-livedata-core-2.6.2-4 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\40208351dd8e551bd3c76f7e226016c5\workspace\transformed\lifecycle-livedata-core-2.6.2\res
-sae.openminds.app-drawerlayout-1.1.1-5 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\42ee6bf802c6da282323993da3f35eda\workspace\transformed\drawerlayout-1.1.1\res
-sae.openminds.app-core-runtime-2.2.0-6 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\4a8e24ad16d9b031b9cf59ffb7865c36\workspace\transformed\core-runtime-2.2.0\res
-sae.openminds.app-material-1.13.0-7 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\4ec3371b527b4b343eb1aebba8b043da\workspace\transformed\material-1.13.0\res
-sae.openminds.app-core-1.16.0-8 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\res
-sae.openminds.app-core-viewtree-1.0.0-9 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\52c5ad0158f3106684d8b22bbd4b26aa\workspace\transformed\core-viewtree-1.0.0\res
-sae.openminds.app-lifecycle-livedata-2.6.2-10 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\69b4455fddc79f2d3f0f2e0c9e409d84\workspace\transformed\lifecycle-livedata-2.6.2\res
-sae.openminds.app-navigationevent-11 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\6be3a53e89702c43ced62df7dcd3923d\workspace\transformed\navigationevent\res
-sae.openminds.app-graphics-shapes-release-12 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\6e9ff3f6eeb25ad41d05567541975612\workspace\transformed\graphics-shapes-release\res
-sae.openminds.app-lifecycle-process-2.6.2-13 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7be29bdba9e737d7b05260246a45b2cc\workspace\transformed\lifecycle-process-2.6.2\res
-sae.openminds.app-emoji2-1.3.0-14 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\res
-sae.openminds.app-tracing-1.2.0-15 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\902ba6b24a073355f9587e4131bec013\workspace\transformed\tracing-1.2.0\res
-sae.openminds.app-appcompat-1.7.1-16 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\9111e9b5acef0f1da6b61250d0905e82\workspace\transformed\appcompat-1.7.1\res
-sae.openminds.app-appcompat-resources-1.7.1-17 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\9e54475648efe3ffc979d2deb102cff8\workspace\transformed\appcompat-resources-1.7.1\res
-sae.openminds.app-startup-runtime-1.1.1-18 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b183ef0939d06de6687fd381a875c23f\workspace\transformed\startup-runtime-1.1.1\res
-sae.openminds.app-lifecycle-viewmodel-savedstate-2.6.2-19 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b27949666a2a74c6a528a4e97136ba52\workspace\transformed\lifecycle-viewmodel-savedstate-2.6.2\res
-sae.openminds.app-fragment-1.5.4-20 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b4c03b98dac61911a64f13900b0ae830\workspace\transformed\fragment-1.5.4\res
-sae.openminds.app-osmdroid-android-6.1.18-21 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\res
-sae.openminds.app-media-1.0.0-22 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\bcc3bbe3cbc71c6a89c9ba6e0a5faf56\workspace\transformed\media-1.0.0\res
-sae.openminds.app-activity-1.12.3-23 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\bdaed9caefdceb804e1d83a0a24a2976\workspace\transformed\activity-1.12.3\res
-sae.openminds.app-viewpager2-1.0.0-24 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\cf50a164a57cbd08d7232c7c59c581a5\workspace\transformed\viewpager2-1.0.0\res
-sae.openminds.app-cardview-1.0.0-25 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\d6b1011d93d00aa138fb4ef692b816ce\workspace\transformed\cardview-1.0.0\res
-sae.openminds.app-constraintlayout-2.2.1-26 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\d9a9dc0e8fc50dce1fe7b98b41a89914\workspace\transformed\constraintlayout-2.2.1\res
-sae.openminds.app-transition-1.5.0-27 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\e135f6ed5b59c0d0ef9b02b1540b6c0a\workspace\transformed\transition-1.5.0\res
-sae.openminds.app-lifecycle-viewmodel-2.6.2-28 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\e5ba49c212ad3133181f6ef2c3fc551e\workspace\transformed\lifecycle-viewmodel-2.6.2\res
-sae.openminds.app-emoji2-views-helper-1.3.0-29 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\ed341e6c76b89fb5c0183a18c221a849\workspace\transformed\emoji2-views-helper-1.3.0\res
-sae.openminds.app-coordinatorlayout-1.1.0-30 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f213cbd85890efb65a391c40b5c013d7\workspace\transformed\coordinatorlayout-1.1.0\res
-sae.openminds.app-profileinstaller-1.4.0-31 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\res
-sae.openminds.app-recyclerview-1.2.1-32 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\f44228d9e8fe72643e4d62e7fd5cee4f\workspace\transformed\recyclerview-1.2.1\res
-sae.openminds.app-annotation-experimental-1.4.1-33 C:\Users\Dufour Isham\.gradle\caches\9.1.0\transforms\fc3e3186e9708a6b32f7a492473fd950\workspace\transformed\annotation-experimental-1.4.1\res
-sae.openminds.app-pngs-34 C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\build\generated\res\pngs\debug
-sae.openminds.app-updated_navigation_xml-35 C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\build\generated\updated_navigation_xml\debug
-sae.openminds.app-packageDebugResources-36 C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-sae.openminds.app-packageDebugResources-37 C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-sae.openminds.app-debug-38 C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\build\intermediates\merged_res\debug\mergeDebugResources
-sae.openminds.app-debug-39 C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\debug\res
-sae.openminds.app-main-40 C:\Users\Dufour Isham\StudioProjects\sae_mobile\app\src\main\res
+sae.openminds.app-pngs-0 C:\S4\sae_mobile\app\build\generated\res\pngs\debug
+sae.openminds.app-updated_navigation_xml-1 C:\S4\sae_mobile\app\build\generated\updated_navigation_xml\debug
+sae.openminds.app-packageDebugResources-2 C:\S4\sae_mobile\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+sae.openminds.app-packageDebugResources-3 C:\S4\sae_mobile\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+sae.openminds.app-debug-4 C:\S4\sae_mobile\app\build\intermediates\merged_res\debug\mergeDebugResources
+sae.openminds.app-debug-5 C:\S4\sae_mobile\app\src\debug\res
+sae.openminds.app-main-6 C:\S4\sae_mobile\app\src\main\res
+sae.openminds.app-lifecycle-runtime-2.6.2-7 C:\Users\moham\.gradle\caches\9.1.0\transforms\2798ce79ccd04760da129a45a6ae0bf4\workspace\transformed\lifecycle-runtime-2.6.2\res
+sae.openminds.app-core-ktx-1.16.0-8 C:\Users\moham\.gradle\caches\9.1.0\transforms\2af0fdbe3d6f6189e6abe90792f468d4\workspace\transformed\core-ktx-1.16.0\res
+sae.openminds.app-dynamicanimation-1.1.0-9 C:\Users\moham\.gradle\caches\9.1.0\transforms\308c098060b2b75b496e8eec95b2aac7\workspace\transformed\dynamicanimation-1.1.0\res
+sae.openminds.app-savedstate-1.2.1-10 C:\Users\moham\.gradle\caches\9.1.0\transforms\37202361d623ad1b9d0cffa0fc0b756c\workspace\transformed\savedstate-1.2.1\res
+sae.openminds.app-lifecycle-livedata-core-2.6.2-11 C:\Users\moham\.gradle\caches\9.1.0\transforms\40208351dd8e551bd3c76f7e226016c5\workspace\transformed\lifecycle-livedata-core-2.6.2\res
+sae.openminds.app-drawerlayout-1.1.1-12 C:\Users\moham\.gradle\caches\9.1.0\transforms\42ee6bf802c6da282323993da3f35eda\workspace\transformed\drawerlayout-1.1.1\res
+sae.openminds.app-core-runtime-2.2.0-13 C:\Users\moham\.gradle\caches\9.1.0\transforms\4a8e24ad16d9b031b9cf59ffb7865c36\workspace\transformed\core-runtime-2.2.0\res
+sae.openminds.app-material-1.13.0-14 C:\Users\moham\.gradle\caches\9.1.0\transforms\4ec3371b527b4b343eb1aebba8b043da\workspace\transformed\material-1.13.0\res
+sae.openminds.app-core-1.16.0-15 C:\Users\moham\.gradle\caches\9.1.0\transforms\4fd129e9dc55d48d8e9bdb7572c8303f\workspace\transformed\core-1.16.0\res
+sae.openminds.app-core-viewtree-1.0.0-16 C:\Users\moham\.gradle\caches\9.1.0\transforms\52c5ad0158f3106684d8b22bbd4b26aa\workspace\transformed\core-viewtree-1.0.0\res
+sae.openminds.app-lifecycle-livedata-2.6.2-17 C:\Users\moham\.gradle\caches\9.1.0\transforms\69b4455fddc79f2d3f0f2e0c9e409d84\workspace\transformed\lifecycle-livedata-2.6.2\res
+sae.openminds.app-navigationevent-18 C:\Users\moham\.gradle\caches\9.1.0\transforms\6be3a53e89702c43ced62df7dcd3923d\workspace\transformed\navigationevent\res
+sae.openminds.app-graphics-shapes-release-19 C:\Users\moham\.gradle\caches\9.1.0\transforms\6e9ff3f6eeb25ad41d05567541975612\workspace\transformed\graphics-shapes-release\res
+sae.openminds.app-lifecycle-process-2.6.2-20 C:\Users\moham\.gradle\caches\9.1.0\transforms\7be29bdba9e737d7b05260246a45b2cc\workspace\transformed\lifecycle-process-2.6.2\res
+sae.openminds.app-emoji2-1.3.0-21 C:\Users\moham\.gradle\caches\9.1.0\transforms\7c09d35b7d0dbb35c3df2f0a01366b88\workspace\transformed\emoji2-1.3.0\res
+sae.openminds.app-tracing-1.2.0-22 C:\Users\moham\.gradle\caches\9.1.0\transforms\902ba6b24a073355f9587e4131bec013\workspace\transformed\tracing-1.2.0\res
+sae.openminds.app-appcompat-1.7.1-23 C:\Users\moham\.gradle\caches\9.1.0\transforms\9111e9b5acef0f1da6b61250d0905e82\workspace\transformed\appcompat-1.7.1\res
+sae.openminds.app-appcompat-resources-1.7.1-24 C:\Users\moham\.gradle\caches\9.1.0\transforms\9e54475648efe3ffc979d2deb102cff8\workspace\transformed\appcompat-resources-1.7.1\res
+sae.openminds.app-startup-runtime-1.1.1-25 C:\Users\moham\.gradle\caches\9.1.0\transforms\b183ef0939d06de6687fd381a875c23f\workspace\transformed\startup-runtime-1.1.1\res
+sae.openminds.app-lifecycle-viewmodel-savedstate-2.6.2-26 C:\Users\moham\.gradle\caches\9.1.0\transforms\b27949666a2a74c6a528a4e97136ba52\workspace\transformed\lifecycle-viewmodel-savedstate-2.6.2\res
+sae.openminds.app-fragment-1.5.4-27 C:\Users\moham\.gradle\caches\9.1.0\transforms\b4c03b98dac61911a64f13900b0ae830\workspace\transformed\fragment-1.5.4\res
+sae.openminds.app-osmdroid-android-6.1.18-28 C:\Users\moham\.gradle\caches\9.1.0\transforms\b520fcd3d2852f576e12d4381e608f35\workspace\transformed\osmdroid-android-6.1.18\res
+sae.openminds.app-media-1.0.0-29 C:\Users\moham\.gradle\caches\9.1.0\transforms\bcc3bbe3cbc71c6a89c9ba6e0a5faf56\workspace\transformed\media-1.0.0\res
+sae.openminds.app-activity-1.12.3-30 C:\Users\moham\.gradle\caches\9.1.0\transforms\bdaed9caefdceb804e1d83a0a24a2976\workspace\transformed\activity-1.12.3\res
+sae.openminds.app-viewpager2-1.0.0-31 C:\Users\moham\.gradle\caches\9.1.0\transforms\cf50a164a57cbd08d7232c7c59c581a5\workspace\transformed\viewpager2-1.0.0\res
+sae.openminds.app-cardview-1.0.0-32 C:\Users\moham\.gradle\caches\9.1.0\transforms\d6b1011d93d00aa138fb4ef692b816ce\workspace\transformed\cardview-1.0.0\res
+sae.openminds.app-constraintlayout-2.2.1-33 C:\Users\moham\.gradle\caches\9.1.0\transforms\d9a9dc0e8fc50dce1fe7b98b41a89914\workspace\transformed\constraintlayout-2.2.1\res
+sae.openminds.app-transition-1.5.0-34 C:\Users\moham\.gradle\caches\9.1.0\transforms\e135f6ed5b59c0d0ef9b02b1540b6c0a\workspace\transformed\transition-1.5.0\res
+sae.openminds.app-lifecycle-viewmodel-2.6.2-35 C:\Users\moham\.gradle\caches\9.1.0\transforms\e5ba49c212ad3133181f6ef2c3fc551e\workspace\transformed\lifecycle-viewmodel-2.6.2\res
+sae.openminds.app-emoji2-views-helper-1.3.0-36 C:\Users\moham\.gradle\caches\9.1.0\transforms\ed341e6c76b89fb5c0183a18c221a849\workspace\transformed\emoji2-views-helper-1.3.0\res
+sae.openminds.app-coordinatorlayout-1.1.0-37 C:\Users\moham\.gradle\caches\9.1.0\transforms\f213cbd85890efb65a391c40b5c013d7\workspace\transformed\coordinatorlayout-1.1.0\res
+sae.openminds.app-profileinstaller-1.4.0-38 C:\Users\moham\.gradle\caches\9.1.0\transforms\f341a5a3b6d96bc4830fcfb440de58a0\workspace\transformed\profileinstaller-1.4.0\res
+sae.openminds.app-recyclerview-1.2.1-39 C:\Users\moham\.gradle\caches\9.1.0\transforms\f44228d9e8fe72643e4d62e7fd5cee4f\workspace\transformed\recyclerview-1.2.1\res
+sae.openminds.app-annotation-experimental-1.4.1-40 C:\Users\moham\.gradle\caches\9.1.0\transforms\fc3e3186e9708a6b32f7a492473fd950\workspace\transformed\annotation-experimental-1.4.1\res

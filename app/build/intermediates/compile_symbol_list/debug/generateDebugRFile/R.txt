@@ -64,13 +64,13 @@ int id listViewCarte 0x0
 int id listViewEnrollments 0x0
 int id listViewFormations 0x0
 int id listViewRessources 0x0
+int id lv_badges_profil 0x0
 int id mapContainer 0x0
 int id mapView 0x0
 int id nav_about 0x0
 int id nav_accueil 0x0
 int id nav_actualites 0x0
 int id nav_administration 0x0
-int id nav_badges 0x0
 int id nav_carte 0x0
 int id nav_entrainement 0x0
 int id nav_espace_formateur 0x0
