@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +20,9 @@ import com.koushikdutta.ion.Ion;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import sae.openminds.Config;
 import sae.openminds.R;
@@ -50,7 +57,6 @@ public class AdminFragment extends Fragment {
         return view;
     }
 
-    // ── Statistiques ─────────────────────────────────────────
     private void fetchStats() {
         Ion.with(this).load("POST", Config.BASE_URL + "getStats.php")
                 .setBodyParameter("token", token).asString()
@@ -71,7 +77,6 @@ public class AdminFragment extends Fragment {
                 });
     }
 
-    // ── Validation des tips soumis par les utilisateurs ──────
     private void showPendingTipsDialog() {
         Ion.with(this).load("POST", Config.BASE_URL + "getPendingTips.php")
                 .setBodyParameter("token", token).asString()
@@ -89,7 +94,6 @@ public class AdminFragment extends Fragment {
                             return;
                         }
 
-                        // Afficher un par un
                         showNextTip(list, 0);
 
                     } catch (Exception ignored) {
@@ -136,7 +140,6 @@ public class AdminFragment extends Fragment {
                 .asString().setCallback((e, r) -> {});
     }
 
-    // ── Activation / désactivation des tips existants ────────
     private void showModerationDialog() {
         Ion.with(this).load("POST", Config.BASE_URL + "getAllBonnesPratiques.php")
                 .setBodyParameter("token", token).asString()
@@ -146,29 +149,87 @@ public class AdminFragment extends Fragment {
                         JSONObject json = new JSONObject(result);
                         JSONArray  list = json.getJSONArray("pratiques");
 
-                        String[]  labels  = new String[list.length()];
-                        boolean[] checked = new boolean[list.length()];
-                        int[]     ids     = new int[list.length()];
+                        List<JSONObject> tipsList = new ArrayList<>();
+                        for (int i = 0; i < list.length(); i++) tipsList.add(list.getJSONObject(i));
 
-                        for (int i = 0; i < list.length(); i++) {
-                            JSONObject p = list.getJSONObject(i);
-                            ids[i]     = p.getInt("id");
-                            String c   = p.getString("content");
-                            labels[i]  = c.substring(0, Math.min(60, c.length()));
-                            checked[i] = p.getInt("active") == 1;
-                        }
+                        ListView lv = new ListView(getActivity());
+                        TipsModerationAdapter adapter = new TipsModerationAdapter(getActivity(), tipsList);
+                        lv.setAdapter(adapter);
 
                         new AlertDialog.Builder(getActivity())
                                 .setTitle(getString(R.string.admin_moderate_title))
-                                .setMultiChoiceItems(labels, checked, (dialog, which, isChecked) ->
-                                        Ion.with(this).load("POST", Config.BASE_URL + "moderatePratique.php")
-                                                .setBodyParameter("token",  token)
-                                                .setBodyParameter("id",     String.valueOf(ids[which]))
-                                                .setBodyParameter("active", isChecked ? "1" : "0")
-                                                .asString().setCallback((e2, r) -> {}))
+                                .setView(lv)
                                 .setPositiveButton(getString(R.string.btn_ok), null)
                                 .show();
                     } catch (Exception ignored) {}
                 });
+    }
+
+    private class TipsModerationAdapter extends BaseAdapter {
+        private final Context          context;
+        private final List<JSONObject> items;
+
+        public TipsModerationAdapter(Context context, List<JSONObject> items) {
+            this.context = context;
+            this.items   = items;
+        }
+
+        @Override public int getCount() { return items.size(); }
+        @Override public Object getItem(int pos) { return items.get(pos); }
+        @Override public long getItemId(int pos) { return pos; }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                convertView = LayoutInflater.from(context).inflate(R.layout.item_tip_moderation, parent, false);
+            }
+            try {
+                JSONObject tip = items.get(position);
+                int    id      = tip.getInt("id");
+                String content = tip.getString("content");
+                boolean active = tip.getInt("active") == 1;
+
+                TextView  tv      = convertView.findViewById(R.id.tvTipContent);
+                CheckBox  cb      = convertView.findViewById(R.id.cbActive);
+                ImageButton btnDel = convertView.findViewById(R.id.btnDeleteTip);
+
+                tv.setText(content);
+                cb.setOnCheckedChangeListener(null);
+                cb.setChecked(active);
+
+                cb.setOnCheckedChangeListener((btn, isChecked) -> 
+                    Ion.with(AdminFragment.this).load("POST", Config.BASE_URL + "moderatePratique.php")
+                            .setBodyParameter("token",  token)
+                            .setBodyParameter("id",     String.valueOf(id))
+                            .setBodyParameter("active", isChecked ? "1" : "0")
+                            .setBodyParameter("action", "moderate")
+                            .asString().setCallback((e, r) -> {
+                                if (e == null) try { tip.put("active", isChecked ? 1 : 0); } catch(Exception ignored){}
+                            }));
+
+                btnDel.setOnClickListener(v -> {
+                    new AlertDialog.Builder(context)
+                            .setTitle(getString(R.string.dialog_delete_title))
+                            .setMessage(getString(R.string.dialog_delete_msg))
+                            .setPositiveButton(getString(R.string.btn_confirm_delete), (dialog, which) -> {
+                                Ion.with(AdminFragment.this).load("POST", Config.BASE_URL + "moderatePratique.php")
+                                        .setBodyParameter("token",  token)
+                                        .setBodyParameter("id",     String.valueOf(id))
+                                        .setBodyParameter("action", "delete")
+                                        .asString().setCallback((e, r) -> {
+                                            if (e == null) {
+                                                Toast.makeText(context, getString(R.string.tip_deleted), Toast.LENGTH_SHORT).show();
+                                                items.remove(position);
+                                                notifyDataSetChanged();
+                                            }
+                                        });
+                            })
+                            .setNegativeButton(getString(R.string.btn_cancel), null)
+                            .show();
+                });
+
+            } catch (Exception ignored) {}
+            return convertView;
+        }
     }
 }

@@ -47,6 +47,7 @@
     <string name="pending_tips_title">Conseils en attente de validation</string>
     <string name="btn_approve">Approuver</string>
     <string name="btn_reject">Rejeter</string>
+    <string name="btn_delete">Supprimer</string>
     <string name="no_pending_tips">Aucun conseil en attente.</string>
     <string name="err_admin_cannot_delete">Les administrateurs ne peuvent pas supprimer leur compte.</string>
     <string name="create_formation_title">Créer une formation</string>
@@ -112,7 +113,7 @@
     <string name="dialog_change_pass_title">Changer le mot de passe</string>
     <string name="hint_old_pass">Mot de passe actuel</string>
     <string name="hint_new_pass">Nouveau mot de passe</string>
-    <string name="dialog_delete_title">Supprimer le compte</string>
+    <string name="dialog_delete_title">Supprimer le conseil</string>
     <string name="dialog_delete_msg">Cette action est irréversible. Supprimer votre compte ?</string>
     <string name="btn_confirm_delete">Supprimer</string>
     <string name="lang_english">English</string>
@@ -129,6 +130,7 @@
     <string name="success_password_updated">Mot de passe mis à jour.</string>
     <string name="success_account_deleted">Compte supprimé.</string>
     <string name="success_temp_password">Votre mot de passe temporaire : %1$s</string>
+    <string name="tip_deleted">Bonne pratique supprimée.</string>
 
     <string name="stat_formations">Formations suivies : %1$d</string>
     <string name="stat_done">Terminées : %1$d</string>
@@ -147,5 +149,11 @@
     <string name="create_ressource_title">Créer une ressource</string>
     <string name="btn_create_ressource">Créer la ressource</string>
     <string name="ressource_created">Ressource créée avec succès !</string>
+
+    <!-- Themes -->
+    <string name="theme_all">Tous les thèmes</string>
+    <string name="theme_environment">Environnement</string>
+    <string name="theme_inclusion">Inclusion</string>
+    <string name="filter_by_theme">Filtrer par thème</string>
 
 </resources>

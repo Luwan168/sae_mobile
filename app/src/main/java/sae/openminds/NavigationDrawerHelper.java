@@ -16,6 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import sae.openminds.fragments.AboutFragment;
 import sae.openminds.fragments.AccueilFragment;
 import sae.openminds.fragments.ActualitesFragment;
 import sae.openminds.fragments.AdminFragment;
@@ -46,6 +47,7 @@ import sae.openminds.fragments.RessourcesFragment;
 //  │ Espace formateur         │          │     ✓     │   ✓   │
 //  │ Administration           │          │           │   ✓   │
 //  │ Paramètres               │    ✓     │     ✓     │   ✓   │
+//  │ À propos                 │    ✓     │     ✓     │   ✓   │
 //  └──────────────────────────┴──────────┴───────────┴───────┘
 // ============================================================
 public class NavigationDrawerHelper implements NavigationView.OnNavigationItemSelectedListener {
@@ -154,6 +156,8 @@ public class NavigationDrawerHelper implements NavigationView.OnNavigationItemSe
             ma.loadFragment(new AdminFragment(),      activity.getString(R.string.menu_admin));
         } else if (id == R.id.nav_parametres) {
             ma.loadFragment(new ParametresFragment(), activity.getString(R.string.menu_settings));
+        } else if (id == R.id.nav_about) {
+            ma.loadFragment(new AboutFragment(),      activity.getString(R.string.menu_about));
         } else if (id == R.id.nav_logout) {
             logout();
         }

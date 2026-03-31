@@ -159,9 +159,16 @@ public class FormateurFragment extends Fragment {
         etDesc.setMinLines(2);
         layout.addView(etDesc);
 
-        EditText etTheme = new EditText(getActivity());
-        etTheme.setHint(getString(R.string.hint_formation_theme));
-        layout.addView(etTheme);
+        // Thèmes prédéfinis
+        TextView tvThemeLabel = new TextView(getActivity());
+        tvThemeLabel.setText(getString(R.string.lbl_theme));
+        tvThemeLabel.setPadding(0, 16, 0, 0);
+        layout.addView(tvThemeLabel);
+
+        final String[] themes = { getString(R.string.theme_environment), getString(R.string.theme_inclusion) };
+        Spinner spTheme = new Spinner(getActivity());
+        spTheme.setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, themes));
+        layout.addView(spTheme);
 
         // Location (visible seulement si présentiel)
         final EditText etLocation = new EditText(getActivity());
@@ -187,11 +194,11 @@ public class FormateurFragment extends Fragment {
                 .setPositiveButton(getString(R.string.btn_create_formation), (dialog, which) -> {
                     String title    = etTitle.getText().toString().trim();
                     String desc     = etDesc.getText().toString().trim();
-                    String theme    = etTheme.getText().toString().trim();
+                    String theme    = themes[spTheme.getSelectedItemPosition()];
                     String location = etLocation.getText().toString().trim();
                     String type     = rbPresent.isChecked() ? "presentiel" : "en_ligne";
 
-                    if (title.isEmpty() || theme.isEmpty()) {
+                    if (title.isEmpty()) {
                         Toast.makeText(getActivity(), getString(R.string.err_fill_fields), Toast.LENGTH_SHORT).show();
                         return;
                     }
@@ -296,7 +303,16 @@ public class FormateurFragment extends Fragment {
 
         EditText etTitle   = new EditText(getActivity()); etTitle.setHint(getString(R.string.hint_formation_title)); layout.addView(etTitle);
         EditText etContent = new EditText(getActivity()); etContent.setHint(getString(R.string.hint_tip_content)); etContent.setMinLines(3); layout.addView(etContent);
-        EditText etTheme   = new EditText(getActivity()); etTheme.setHint(getString(R.string.hint_formation_theme)); layout.addView(etTheme);
+        
+        TextView tvThemeLabel = new TextView(getActivity());
+        tvThemeLabel.setText(getString(R.string.lbl_theme));
+        tvThemeLabel.setPadding(0, 16, 0, 0);
+        layout.addView(tvThemeLabel);
+
+        final String[] themes = { getString(R.string.theme_environment), getString(R.string.theme_inclusion) };
+        Spinner spTheme = new Spinner(getActivity());
+        spTheme.setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, themes));
+        layout.addView(spTheme);
 
         RadioGroup rg = new RadioGroup(getActivity()); rg.setOrientation(RadioGroup.HORIZONTAL);
         RadioButton rbArticle = new RadioButton(getActivity()); rbArticle.setText(getString(R.string.lbl_article)); rbArticle.setChecked(true);
@@ -309,7 +325,7 @@ public class FormateurFragment extends Fragment {
                 .setPositiveButton(getString(R.string.btn_create_ressource), (dialog, which) -> {
                     String title   = etTitle.getText().toString().trim();
                     String content = etContent.getText().toString().trim();
-                    String theme   = etTheme.getText().toString().trim();
+                    String theme   = themes[spTheme.getSelectedItemPosition()];
                     String type    = rbGuide.isChecked() ? "guide" : "article";
                     if (title.isEmpty() || content.isEmpty()) {
                         Toast.makeText(getActivity(), getString(R.string.err_fill_fields), Toast.LENGTH_SHORT).show(); return;
