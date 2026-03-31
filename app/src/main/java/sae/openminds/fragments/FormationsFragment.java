@@ -133,6 +133,12 @@ public class FormationsFragment extends Fragment {
                             case "success":
                                 msg = getString(R.string.enroll_success);
                                 fetchFormations(); // rafraîchir les places
+                                // Sauvegarder la formation active pour le QuizFragment
+                                requireActivity()
+                                        .getSharedPreferences(Config.PREFS_NAME, Context.MODE_PRIVATE)
+                                        .edit()
+                                        .putInt("active_formation_id", f.id)
+                                        .apply();
                                 break;
                             case "already_enrolled":
                                 msg = getString(R.string.already_enrolled); break;
