@@ -26,7 +26,6 @@
     <string name="btn_cancel">Cancelar</string>
     <string name="btn_ok">OK</string>
     <string name="menu_home">Inicio</string>
-    <string name="menu_formations">Formations</string>
     <string name="menu_entrainement">Quiz</string>
     <string name="menu_badges">Insignias</string>
     <string name="menu_actualites">Noticias</string>
@@ -149,10 +148,6 @@
     <string name="create_ressource_title">Crear un recurso</string>
     <string name="btn_create_ressource">Crear recurso</string>
     <string name="ressource_created">¡Recurso creado con éxito!</string>
-    <string name="theme_all">"      Todos los temas    "</string>
-    <string name="theme_environment">"    Medio ambiente   "</string>
-    <string name="theme_inclusion">"        Inclusión      "</string>
-    <string name="filter_by_theme">"        Filtrar por tema      "</string>
     <string name="btn_leave_formation">Dejar la formación</string>
     <string name="leave_formation_title">Dejar la formación</string>
     <string name="leave_formation_msg">¿Seguro que quieres dejar esta formación? Tu progreso se perderá.</string>
