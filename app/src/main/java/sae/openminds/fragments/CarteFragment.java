@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import com.koushikdutta.ion.Ion;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import sae.openminds.Config;
@@ -33,31 +37,77 @@ import sae.openminds.models.Formation;
 
 // ============================================================
 //  CarteFragment — Formations en présentiel proches de chez moi
-//  Filtre par ville de l'utilisateur
+//  Filtre par ville de l'utilisateur + Filtre par thème
 // ============================================================
 public class CarteFragment extends Fragment {
 
-    private ProgressBar progressBar;
-    private ListView    listView;
-    private TextView    tvEmpty, tvCityInfo;
-    private String      token;
+    private ProgressBar     progressBar;
+    private ListView        listView;
+    private TextView        tvEmpty, tvCityInfo;
+    private Spinner         spFilterTheme;
+    private String          token;
+    private List<Formation> allFormations = new ArrayList<>();
+    private String[]        filterThemes;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_carte, container, false);
 
-        progressBar = view.findViewById(R.id.progressBar);
-        listView    = view.findViewById(R.id.listViewCarte);
-        tvEmpty     = view.findViewById(R.id.tvEmpty);
-        tvCityInfo  = view.findViewById(R.id.tvCityInfo);
+        progressBar   = view.findViewById(R.id.progressBar);
+        listView      = view.findViewById(R.id.listViewCarte);
+        tvEmpty       = view.findViewById(R.id.tvEmpty);
+        tvCityInfo    = view.findViewById(R.id.tvCityInfo);
+        spFilterTheme = view.findViewById(R.id.spFilterTheme);
         Button btnUpdateCity = view.findViewById(R.id.btnUpdateCity);
 
         token = requireActivity().getSharedPreferences(Config.PREFS_NAME, Context.MODE_PRIVATE).getString(Config.KEY_TOKEN, "");
 
         btnUpdateCity.setOnClickListener(v -> showUpdateCityDialog());
 
+        setupThemeFilter();
         fetchNearby();
         return view;
+    }
+
+    private void setupThemeFilter() {
+        filterThemes = new String[]{
+                getString(R.string.theme_all),
+                getString(R.string.theme_environment),
+                getString(R.string.theme_inclusion)
+        };
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, filterThemes);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spFilterTheme.setAdapter(adapter);
+
+        spFilterTheme.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                applyFilter();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+    }
+
+    private void applyFilter() {
+        if (allFormations == null) return;
+        
+        int selectedPos = spFilterTheme.getSelectedItemPosition();
+        if (selectedPos == 0) { // All themes
+            listView.setAdapter(new FormationAdapter(getActivity(), allFormations));
+            tvEmpty.setVisibility(allFormations.isEmpty() ? View.VISIBLE : View.GONE);
+            return;
+        }
+
+        String selectedTheme = filterThemes[selectedPos];
+        List<Formation> filtered = new ArrayList<>();
+        for (Formation f : allFormations) {
+            if (f.theme != null && f.theme.equalsIgnoreCase(selectedTheme)) {
+                filtered.add(f);
+            }
+        }
+        listView.setAdapter(new FormationAdapter(getActivity(), filtered));
+        tvEmpty.setVisibility(filtered.isEmpty() ? View.VISIBLE : View.GONE);
     }
 
     private void fetchNearby() {
@@ -89,13 +139,14 @@ public class CarteFragment extends Fragment {
                         tvCityInfo.setVisibility(View.VISIBLE);
 
                         Type listType = new TypeToken<List<Formation>>(){}.getType();
-                        List<Formation> formations = new Gson().fromJson(json.getAsJsonArray("formations"), listType);
+                        allFormations = new Gson().fromJson(json.getAsJsonArray("formations"), listType);
 
-                        if (formations == null || formations.isEmpty()) {
+                        if (allFormations == null || allFormations.isEmpty()) {
+                            allFormations = new ArrayList<>();
                             tvEmpty.setVisibility(View.VISIBLE);
                             return;
                         }
-                        listView.setAdapter(new FormationAdapter(getActivity(), formations));
+                        applyFilter();
                     } catch (Exception ex) {
                         tvEmpty.setVisibility(View.VISIBLE);
                     }

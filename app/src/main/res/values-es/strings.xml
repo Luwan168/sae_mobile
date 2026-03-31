@@ -147,5 +147,9 @@
     <string name="create_ressource_title">Crear un recurso</string>
     <string name="btn_create_ressource">Crear recurso</string>
     <string name="ressource_created">¡Recurso creado con éxito!</string>
+    <string name="theme_all">"      Todos los temas    "</string>
+    <string name="theme_environment">"    Medio ambiente   "</string>
+    <string name="theme_inclusion">"        Inclusión      "</string>
+    <string name="filter_by_theme">"        Filtrar por tema      "</string>
 
 </resources>

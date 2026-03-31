@@ -148,4 +148,10 @@
     <string name="btn_create_ressource">Créer la ressource</string>
     <string name="ressource_created">Ressource créée avec succès !</string>
 
+    <!-- Themes -->
+    <string name="theme_all">Tous les thèmes</string>
+    <string name="theme_environment">Environnement</string>
+    <string name="theme_inclusion">Inclusion</string>
+    <string name="filter_by_theme">Filtrer par thème</string>
+
 </resources>

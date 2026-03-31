@@ -181,5 +181,12 @@
     <string name="create_ressource_title">Create a resource</string>
     <string name="btn_create_ressource">Create resource</string>
     <string name="ressource_created">Resource created successfully!</string>
+    <string name="_2026_openminds_project" translatable="false">© 2026 OpenMinds Project"</string>
+
+    <!-- Themes -->
+    <string name="theme_all">All themes</string>
+    <string name="theme_environment">Environment</string>
+    <string name="theme_inclusion">Inclusion</string>
+    <string name="filter_by_theme">Filter by theme</string>
 
 </resources>
