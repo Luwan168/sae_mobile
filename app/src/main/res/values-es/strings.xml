@@ -112,8 +112,8 @@
     <string name="dialog_change_pass_title">Cambiar contraseña</string>
     <string name="hint_old_pass">Contraseña actual</string>
     <string name="hint_new_pass">Nueva contraseña</string>
-    <string name="dialog_delete_title">Eliminar el consejo</string>
-    <string name="dialog_delete_msg">Esta acción es irreversible. ¿Eliminar el consejo?</string>
+    <string name="dialog_delete_title">Eliminar cuenta</string>
+    <string name="dialog_delete_msg">Esta acción es irreversible. ¿Eliminar tu cuenta?</string>
     <string name="btn_confirm_delete">Eliminar</string>
     <string name="lang_english">English</string>
     <string name="lang_french">Français</string>
@@ -151,5 +151,19 @@
     <string name="theme_environment">"    Medio ambiente   "</string>
     <string name="theme_inclusion">"        Inclusión      "</string>
     <string name="filter_by_theme">"        Filtrar por tema      "</string>
-
+    <string name="btn_leave_formation">Dejar la formación</string>
+    <string name="leave_formation_title">Dejar la formación</string>
+    <string name="leave_formation_msg">¿Seguro que quieres dejar esta formación? Tu progreso se perderá.</string>
+    <string name="leave_success">Has dejado la formación.</string>
+    <string name="btn_end_formation">Marcar como completada</string>
+    <string name="end_formation_title">Terminar formación</string>
+    <string name="end_formation_msg">¿Marcar esta formación como completada? Los voluntarios ya no podrán inscribirse.</string>
+    <string name="end_formation_success">¡Formación marcada como completada!</string>
+    <string name="lbl_places_left">%1$d / %2$d plazas restantes</string>
+    <string name="lbl_places_full">Completo</string>
+    <string name="hint_max_places">Número máximo de plazas (vacío = ilimitado)</string>
+    <string name="err_formation_full">Esta formación está completa.</string>
+    <string name="err_too_many_active">Ya tienes %1$d formaciones activas. Completa una primero.</string>
+    <string name="tip_approved">¡Consejo aprobado!</string>
+    <string name="tip_rejected">Consejo rechazado.</string>
 </resources>

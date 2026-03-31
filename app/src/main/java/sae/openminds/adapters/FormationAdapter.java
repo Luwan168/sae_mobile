@@ -13,7 +13,7 @@ import sae.openminds.R;
 import sae.openminds.models.Formation;
 
 // ============================================================
-//  app/src/main/java/sae/openminds/adapters/FormationAdapter.java
+//  FormationAdapter — sans type, avec gestion des places
 // ============================================================
 public class FormationAdapter extends ArrayAdapter<Formation> {
 
@@ -32,15 +32,39 @@ public class FormationAdapter extends ArrayAdapter<Formation> {
 
         TextView tvTitle  = convertView.findViewById(R.id.tvFormationTitle);
         TextView tvTheme  = convertView.findViewById(R.id.tvFormationTheme);
-        TextView tvType   = convertView.findViewById(R.id.tvFormationType);
+        TextView tvPlaces = convertView.findViewById(R.id.tvPlaces);
+        TextView tvLocation = convertView.findViewById(R.id.tvFormationLocation);
 
         tvTitle.setText(f.title);
         tvTheme.setText(f.theme);
 
-        String typeLabel = "presentiel".equals(f.type)
-                ? getContext().getString(R.string.lbl_type_presential)
-                : getContext().getString(R.string.lbl_type_online);
-        tvType.setText(typeLabel);
+        // Lieu
+        if (f.location != null && !f.location.isEmpty()) {
+            tvLocation.setText(f.location);
+            tvLocation.setVisibility(View.VISIBLE);
+        } else {
+            tvLocation.setVisibility(View.GONE);
+        }
+
+        // Badge places
+        if (f.max_places > 0) {
+            tvPlaces.setVisibility(View.VISIBLE);
+            if (f.is_full) {
+                tvPlaces.setText(getContext().getString(R.string.lbl_places_full));
+                tvPlaces.setBackgroundColor(getContext().getColor(R.color.status_abandoned));
+                tvPlaces.setTextColor(getContext().getColor(R.color.white));
+            } else {
+                tvPlaces.setText(getContext().getString(
+                        R.string.lbl_places_left, f.places_left, f.max_places));
+                tvPlaces.setBackgroundColor(getContext().getColor(R.color.green_accent));
+                tvPlaces.setTextColor(getContext().getColor(R.color.green_primary_dark));
+            }
+        } else {
+            tvPlaces.setVisibility(View.GONE);
+        }
+
+        // Griser si complet
+        convertView.setAlpha(f.is_full ? 0.45f : 1f);
 
         return convertView;
     }

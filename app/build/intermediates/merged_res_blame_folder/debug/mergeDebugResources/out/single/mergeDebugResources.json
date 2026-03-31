@@ -44,12 +44,12 @@
         "source": "sae.openminds.app-main-38:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "sae.openminds.app-debug-36:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "sae.openminds.app-main-38:/mipmap-mdpi/ic_launcher_round.webp"
-    },
-    {
         "merged": "sae.openminds.app-debug-36:/drawable_ic_person.xml.flat",
         "source": "sae.openminds.app-main-38:/drawable/ic_person.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "sae.openminds.app-main-38:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
         "merged": "sae.openminds.app-debug-36:/drawable_ic_book.xml.flat",
@@ -136,6 +136,14 @@
         "source": "sae.openminds.app-main-38:/layout/nav_header.xml"
     },
     {
+        "merged": "sae.openminds.app-debug-36:/layout_item_tip_moderation.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/item_tip_moderation.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_fragment_about.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/fragment_about.xml"
+    },
+    {
         "merged": "sae.openminds.app-debug-36:/layout_activity_register.xml.flat",
         "source": "sae.openminds.app-main-38:/layout/activity_register.xml"
     },
@@ -152,12 +160,12 @@
         "source": "sae.openminds.app-main-38:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "sae.openminds.app-debug-36:/layout_activity_main.xml.flat",
-        "source": "sae.openminds.app-main-38:/layout/activity_main.xml"
-    },
-    {
         "merged": "sae.openminds.app-debug-36:/layout_activity_login.xml.flat",
         "source": "sae.openminds.app-main-38:/layout/activity_login.xml"
+    },
+    {
+        "merged": "sae.openminds.app-debug-36:/layout_activity_main.xml.flat",
+        "source": "sae.openminds.app-main-38:/layout/activity_main.xml"
     },
     {
         "merged": "sae.openminds.app-debug-36:/layout_fragment_carte.xml.flat",

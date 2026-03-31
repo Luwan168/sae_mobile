@@ -142,8 +142,8 @@
     <string name="dialog_change_pass_title">Change password</string>
     <string name="hint_old_pass">Current password</string>
     <string name="hint_new_pass">New password</string>
-    <string name="dialog_delete_title">Delete the tip</string>
-    <string name="dialog_delete_msg">This action is irreversible. Delete this tip?</string>
+    <string name="dialog_delete_title">Delete account</string>
+    <string name="dialog_delete_msg">This action is irreversible. Delete your account?</string>
     <string name="btn_confirm_delete">Delete</string>
     <string name="lang_english">English</string>
     <string name="lang_french">Français</string>
@@ -190,5 +190,19 @@
     <string name="theme_environment">Environment</string>
     <string name="theme_inclusion">Inclusion</string>
     <string name="filter_by_theme">Filter by theme</string>
-
+    <string name="btn_leave_formation">Leave training</string>
+    <string name="leave_formation_title">Leave training</string>
+    <string name="leave_formation_msg">Are you sure you want to leave this training? Your progress will be lost.</string>
+    <string name="leave_success">You have left the training.</string>
+    <string name="btn_end_formation">Mark as completed</string>
+    <string name="end_formation_title">End training</string>
+    <string name="end_formation_msg">Mark this training as completed? Students will no longer be able to enroll.</string>
+    <string name="end_formation_success">Training marked as completed.</string>
+    <string name="lbl_places_left">%1$d / %2$d places left</string>
+    <string name="lbl_places_full">Full</string>
+    <string name="hint_max_places">Max participants (leave empty = unlimited)</string>
+    <string name="err_formation_full">This training is full.</string>
+    <string name="err_too_many_active">You already have %1$d active trainings. Complete one first.</string>
+    <string name="tip_approved">Tip approved!</string>
+    <string name="tip_rejected">Tip rejected.</string>
 </resources>

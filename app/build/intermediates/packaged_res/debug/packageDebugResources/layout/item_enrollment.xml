@@ -16,5 +16,12 @@
         <TextView android:id="@+id/tvEnrollStatus"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:textSize="12sp" android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/ivDeleteEnrollment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:tint="@color/text_primary" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
