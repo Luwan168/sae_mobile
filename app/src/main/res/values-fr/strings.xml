@@ -47,6 +47,7 @@
     <string name="pending_tips_title">Conseils en attente de validation</string>
     <string name="btn_approve">Approuver</string>
     <string name="btn_reject">Rejeter</string>
+    <string name="btn_delete">Supprimer</string>
     <string name="no_pending_tips">Aucun conseil en attente.</string>
     <string name="err_admin_cannot_delete">Les administrateurs ne peuvent pas supprimer leur compte.</string>
     <string name="create_formation_title">Créer une formation</string>
@@ -129,6 +130,7 @@
     <string name="success_password_updated">Mot de passe mis à jour.</string>
     <string name="success_account_deleted">Compte supprimé.</string>
     <string name="success_temp_password">Votre mot de passe temporaire : %1$s</string>
+    <string name="tip_deleted">Bonne pratique supprimée.</string>
 
     <string name="stat_formations">Formations suivies : %1$d</string>
     <string name="stat_done">Terminées : %1$d</string>

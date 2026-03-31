@@ -52,6 +52,7 @@
     <string name="pending_tips_title">Tips awaiting approval</string>
     <string name="btn_approve">Approve</string>
     <string name="btn_reject">Reject</string>
+    <string name="btn_delete">Delete</string>
     <string name="no_pending_tips">No tips awaiting approval.</string>
     <string name="err_admin_cannot_delete">Administrators cannot delete their own account.</string>
 
@@ -162,6 +163,7 @@
     <string name="success_password_updated">Password updated successfully.</string>
     <string name="success_account_deleted">Account deleted.</string>
     <string name="success_temp_password">Your temporary password: %1$s</string>
+    <string name="tip_deleted">Tip deleted.</string>
 
     <!-- Nouvelles strings v3 -->
     <string name="stat_formations">Formations enrolled: %1$d</string>
