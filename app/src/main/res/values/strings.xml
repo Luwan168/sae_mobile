@@ -209,4 +209,5 @@
     <string name="theme_health">Health</string>
     <string name="theme_citizenship">Citizenship</string>
 
+    <string name="err_formation_completed">Cannot add a question to a completed training.</string>
 </resources>

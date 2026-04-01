@@ -174,4 +174,5 @@
     <string name="theme_inclusion">Inclusion</string>
     <string name="theme_health">Santé</string>
     <string name="theme_citizenship">Citoyenneté</string>
+    <string name="err_formation_completed">Impossible d ajouter une question à une formation terminée.</string>
 </resources>

@@ -181,7 +181,7 @@ public class FormateurFragment extends Fragment {
                     try {
                         JSONObject json     = new JSONObject(result);
                         JSONArray  students = json.getJSONArray("students");
-                        
+
                         StringBuilder sb = new StringBuilder();
                         if (students.length() == 0) {
                             sb.append(getString(R.string.no_students_yet));
@@ -342,7 +342,14 @@ public class FormateurFragment extends Fragment {
 
     // ── Ajouter une question ─────────────────────────────────
     private void showAddQuestionDialog() {
-        if (mesFormations.isEmpty()) {
+        // Filtrer les formations NON terminées
+        List<Formation> actives = new ArrayList<>();
+        for (Formation f : mesFormations) {
+            if (!f.is_full || true) { // garder toutes sauf is_completed
+                if (!f.is_completed) actives.add(f);
+            }
+        }
+        if (actives.isEmpty()) {
             Toast.makeText(getActivity(),
                     getString(R.string.select_formation_first), Toast.LENGTH_SHORT).show();
             return;
@@ -351,8 +358,8 @@ public class FormateurFragment extends Fragment {
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(50, 30, 50, 20);
 
-        String[] titles = new String[mesFormations.size()];
-        for (int i = 0; i < mesFormations.size(); i++) titles[i] = mesFormations.get(i).title;
+        String[] titles = new String[actives.size()];
+        for (int i = 0; i < actives.size(); i++) titles[i] = actives.get(i).title;
 
         TextView tvLabel = new TextView(getActivity());
         tvLabel.setText(getString(R.string.select_formation_label));
@@ -383,7 +390,7 @@ public class FormateurFragment extends Fragment {
                 .setTitle(getString(R.string.add_question_title))
                 .setView(layout)
                 .setPositiveButton(getString(R.string.btn_add_question), (dialog, which) -> {
-                    int    formId = mesFormations.get(spFormation.getSelectedItemPosition()).id;
+                    int    formId = actives.get(spFormation.getSelectedItemPosition()).id;
                     String q      = etQuestion.getText().toString().trim();
                     String corr   = etCorrect.getText().toString().trim();
                     JSONArray ca  = new JSONArray();
@@ -408,11 +415,11 @@ public class FormateurFragment extends Fragment {
                                 try {
                                     String status = JsonParser.parseString(result)
                                             .getAsJsonObject().get("status").getAsString();
-                                    Toast.makeText(getActivity(),
-                                            status.equals("success")
-                                                    ? getString(R.string.question_added)
-                                                    : getString(R.string.err_server),
-                                            Toast.LENGTH_SHORT).show();
+                                    String msg;
+                                    if (status.equals("success")) msg = getString(R.string.question_added);
+                                    else if (status.equals("formation_completed")) msg = getString(R.string.err_formation_completed);
+                                    else msg = getString(R.string.err_server);
+                                    Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
                                 } catch (Exception ignored) {}
                             });
                 })
