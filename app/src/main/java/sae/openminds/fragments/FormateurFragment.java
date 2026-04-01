@@ -154,7 +154,7 @@ public class FormateurFragment extends Fragment {
                 });
     }
 
-    // ── Voir les élèves ──────────────────────────────────────
+    // ── Voir les élèves + Terminer la formation ──────────────
     private void showStudentsDialog(Formation f) {
         Ion.with(this).load("POST", Config.BASE_URL + "getFormationStudents.php")
                 .setBodyParameter("token",        token)
@@ -169,34 +169,71 @@ public class FormateurFragment extends Fragment {
                     try {
                         JSONObject json     = new JSONObject(result);
                         JSONArray  students = json.getJSONArray("students");
-                        if (students.length() == 0) {
-                            new AlertDialog.Builder(getActivity())
-                                    .setTitle(f.title)
-                                    .setMessage(getString(R.string.no_students_yet))
-                                    .setPositiveButton(getString(R.string.btn_ok), null)
-                                    .show();
-                            return;
-                        }
+                        
                         StringBuilder sb = new StringBuilder();
-                        for (int i = 0; i < students.length(); i++) {
-                            JSONObject s = students.getJSONObject(i);
-                            sb.append(s.getString("firstname")).append(" ")
-                                    .append(s.getString("lastname"))
-                                    .append(" — ").append(s.getString("status"));
-                            if (!s.isNull("score"))
-                                sb.append(" (").append(s.getInt("score")).append("%)");
-                            sb.append("\n");
+                        if (students.length() == 0) {
+                            sb.append(getString(R.string.no_students_yet));
+                        } else {
+                            for (int i = 0; i < students.length(); i++) {
+                                JSONObject s = students.getJSONObject(i);
+                                sb.append(s.getString("firstname")).append(" ")
+                                        .append(s.getString("lastname"))
+                                        .append(" — ").append(s.getString("status"));
+                                if (!s.isNull("score"))
+                                    sb.append(" (").append(s.getInt("score")).append("%)");
+                                sb.append("\n");
+                            }
                         }
-                        new AlertDialog.Builder(getActivity())
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
                                 .setTitle(getString(R.string.students_enrolled_in, f.title))
                                 .setMessage(sb.toString())
-                                .setPositiveButton(getString(R.string.btn_ok), null)
-                                .show();
+                                .setPositiveButton(getString(R.string.btn_ok), null);
+
+                        // Bouton pour terminer la formation
+                        if (!f.is_completed) {
+                            builder.setNeutralButton(getString(R.string.btn_end_formation), (dialog, which) -> {
+                                confirmEndFormation(f);
+                            });
+                        }
+
+                        builder.show();
                     } catch (Exception ex) {
                         Toast.makeText(getActivity(),
                                 getString(R.string.err_server), Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void confirmEndFormation(Formation f) {
+        new AlertDialog.Builder(getActivity())
+                .setTitle(getString(R.string.end_formation_title))
+                .setMessage(getString(R.string.end_formation_msg))
+                .setPositiveButton(getString(R.string.btn_ok), (dialog, which) -> {
+                    Ion.with(this).load("POST", Config.BASE_URL + "completeFormation.php")
+                            .setBodyParameter("token", token)
+                            .setBodyParameter("formation_id", String.valueOf(f.id))
+                            .asString()
+                            .setCallback((e, result) -> {
+                                if (e != null || result == null) {
+                                    Toast.makeText(getActivity(), getString(R.string.err_server), Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+                                try {
+                                    JsonObject json = JsonParser.parseString(result).getAsJsonObject();
+                                    if (json.get("status").getAsString().equals("success")) {
+                                        Toast.makeText(getActivity(), getString(R.string.end_formation_success), Toast.LENGTH_SHORT).show();
+                                        loadMyFormations();
+                                    } else {
+                                        Toast.makeText(getActivity(), getString(R.string.err_server), Toast.LENGTH_SHORT).show();
+                                    }
+                                } catch (Exception ex) {
+                                    Toast.makeText(getActivity(), getString(R.string.err_server), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                })
+                .setNegativeButton(getString(R.string.btn_cancel), null)
+                .show();
     }
 
     // ── Créer une formation ──────────────────────────────────

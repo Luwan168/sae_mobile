@@ -16,4 +16,5 @@ public class Formation {
     public int     enrolled_count;
     public int     places_left;    // places restantes
     public boolean is_full;
+    public boolean is_completed;
 }

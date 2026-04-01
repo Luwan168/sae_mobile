@@ -90,14 +90,18 @@ public class FormationsFragment extends Fragment {
         if (f.location != null && !f.location.isEmpty()) {
             msg.append(getString(R.string.lbl_location)).append(" ").append(f.location).append("\n");
         }
-        // Affichage des places
-        if (f.max_places > 0) {
+        
+        // Affichage des places ou statut terminé
+        if (f.is_completed) {
+            msg.append(getString(R.string.btn_end_formation)).append("\n");
+        } else if (f.max_places > 0) {
             if (f.is_full) {
                 msg.append(getString(R.string.lbl_places_full)).append("\n");
             } else {
                 msg.append(getString(R.string.lbl_places_left, f.places_left, f.max_places)).append("\n");
             }
         }
+        
         if (f.description != null && !f.description.isEmpty()) {
             msg.append("\n").append(f.description);
         }
@@ -107,8 +111,8 @@ public class FormationsFragment extends Fragment {
                 .setMessage(msg.toString())
                 .setNegativeButton(getString(R.string.btn_cancel), null);
 
-        // Bouton inscription masqué si formation complète
-        if (!f.is_full) {
+        // Bouton inscription masqué si formation complète ou terminée
+        if (!f.is_full && !f.is_completed) {
             builder.setPositiveButton(getString(R.string.btn_enroll),
                     (dialog, which) -> enrollFormation(f));
         }

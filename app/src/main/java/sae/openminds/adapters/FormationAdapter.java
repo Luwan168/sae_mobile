@@ -46,9 +46,13 @@ public class FormationAdapter extends ArrayAdapter<Formation> {
             tvLocation.setVisibility(View.GONE);
         }
 
-        // Badge places
-        if (f.max_places > 0) {
-            tvPlaces.setVisibility(View.VISIBLE);
+        // Badge places / Statut
+        tvPlaces.setVisibility(View.VISIBLE);
+        if (f.is_completed) {
+            tvPlaces.setText(getContext().getString(R.string.btn_end_formation)); // Or "Terminée" if available
+            tvPlaces.setBackgroundColor(getContext().getColor(R.color.text_secondary));
+            tvPlaces.setTextColor(getContext().getColor(R.color.white));
+        } else if (f.max_places > 0) {
             if (f.is_full) {
                 tvPlaces.setText(getContext().getString(R.string.lbl_places_full));
                 tvPlaces.setBackgroundColor(getContext().getColor(R.color.status_abandoned));
@@ -63,8 +67,8 @@ public class FormationAdapter extends ArrayAdapter<Formation> {
             tvPlaces.setVisibility(View.GONE);
         }
 
-        // Griser si complet
-        convertView.setAlpha(f.is_full ? 0.45f : 1f);
+        // Griser si complet ou terminé
+        convertView.setAlpha((f.is_full || f.is_completed) ? 0.45f : 1f);
 
         return convertView;
     }
