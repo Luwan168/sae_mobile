@@ -54,7 +54,7 @@
     <string name="hint_formation_title">Título</string>
     <string name="hint_formation_description">Descripción</string>
     <string name="hint_formation_theme">Tema</string>
-    <string name="hint_formation_location">Lugar (si es presencial)</string>
+    <string name="hint_formation_location">Lugar</string>
     <string name="lbl_type_select">Tipo</string>
     <string name="formation_created">¡Formación creada con éxito!</string>
     <string name="btn_create_formation">Crear formación</string>
@@ -167,9 +167,12 @@
 
     <!-- Themes -->
     <string name="theme_all">Todos los temas</string>
-    <string name="theme_environment">Medio ambiente</string>
-    <string name="theme_inclusion">Inclusión</string>
     <string name="filter_by_theme">Filtrar por tema</string>
     <string name="btn_search">Buscar</string>
+    <!-- ES -->
+    <string name="theme_environment">Medio ambiente</string>
+    <string name="theme_inclusion">Inclusión</string>
+    <string name="theme_health">Salud</string>
+    <string name="theme_citizenship">Ciudadanía</string>
 
 </resources>

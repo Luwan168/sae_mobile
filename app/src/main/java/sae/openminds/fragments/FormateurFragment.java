@@ -242,7 +242,7 @@ public class FormateurFragment extends Fragment {
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(50, 30, 50, 20);
 
-        EditText etTitle     = new EditText(getActivity());
+        EditText etTitle = new EditText(getActivity());
         etTitle.setHint(getString(R.string.hint_formation_title));
         layout.addView(etTitle);
 
@@ -251,9 +251,23 @@ public class FormateurFragment extends Fragment {
         etDesc.setMinLines(2);
         layout.addView(etDesc);
 
-        EditText etTheme = new EditText(getActivity());
-        etTheme.setHint(getString(R.string.hint_formation_theme));
-        layout.addView(etTheme);
+        // Thème — Spinner au lieu de EditText
+        TextView tvThemeLabel = new TextView(getActivity());
+        tvThemeLabel.setText(getString(R.string.lbl_theme));
+        tvThemeLabel.setPadding(0, 16, 0, 4);
+        layout.addView(tvThemeLabel);
+
+        String[] themes = new String[Config.THEMES.length];
+        for (int i = 0; i < Config.THEMES.length; i++) {
+            int resId = getActivity().getResources()
+                    .getIdentifier("theme_" + Config.THEMES[i], "string",
+                            getActivity().getPackageName());
+            themes[i] = resId != 0 ? getString(resId) : Config.THEMES[i];
+        }
+        Spinner spTheme = new Spinner(getActivity());
+        spTheme.setAdapter(new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_spinner_dropdown_item, themes));
+        layout.addView(spTheme);
 
         EditText etLocation = new EditText(getActivity());
         etLocation.setHint(getString(R.string.hint_formation_location));
@@ -270,11 +284,11 @@ public class FormateurFragment extends Fragment {
                 .setPositiveButton(getString(R.string.btn_create_formation), (dialog, which) -> {
                     String title      = etTitle.getText().toString().trim();
                     String desc       = etDesc.getText().toString().trim();
-                    String theme      = etTheme.getText().toString().trim();
+                    String theme      = themes[spTheme.getSelectedItemPosition()];
                     String location   = etLocation.getText().toString().trim();
                     String maxPlacesS = etMaxPlaces.getText().toString().trim();
 
-                    if (title.isEmpty() || theme.isEmpty() || location.isEmpty()) {
+                    if (title.isEmpty() || location.isEmpty()) {
                         Toast.makeText(getActivity(),
                                 getString(R.string.err_fill_fields), Toast.LENGTH_SHORT).show();
                         return;
@@ -410,37 +424,55 @@ public class FormateurFragment extends Fragment {
         etContent.setMinLines(3);
         layout.addView(etContent);
 
-        EditText etTheme = new EditText(getActivity());
-        etTheme.setHint(getString(R.string.hint_formation_theme));
-        layout.addView(etTheme);
+        // Thème — Spinner
+        TextView tvThemeLabel = new TextView(getActivity());
+        tvThemeLabel.setText(getString(R.string.lbl_theme));
+        tvThemeLabel.setPadding(0, 16, 0, 4);
+        layout.addView(tvThemeLabel);
 
+        String[] themes = new String[Config.THEMES.length];
+        for (int i = 0; i < Config.THEMES.length; i++) {
+            int resId = getActivity().getResources()
+                    .getIdentifier("theme_" + Config.THEMES[i], "string",
+                            getActivity().getPackageName());
+            themes[i] = resId != 0 ? getString(resId) : Config.THEMES[i];
+        }
+        Spinner spTheme = new Spinner(getActivity());
+        spTheme.setAdapter(new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_spinner_dropdown_item, themes));
+        layout.addView(spTheme);
+
+        // RadioGroup — IDs obligatoires pour que l'exclusion mutuelle fonctionne
         RadioGroup rg = new RadioGroup(getActivity());
         rg.setOrientation(RadioGroup.HORIZONTAL);
+
         RadioButton rbArticle = new RadioButton(getActivity());
+        rbArticle.setId(View.generateViewId());
         rbArticle.setText(getString(R.string.lbl_article));
         rbArticle.setChecked(true);
+
         RadioButton rbGuide = new RadioButton(getActivity());
+        rbGuide.setId(View.generateViewId());
         rbGuide.setText(getString(R.string.lbl_guide));
+
         rg.addView(rbArticle);
         rg.addView(rbGuide);
         layout.addView(rg);
 
-        // ── Bouton sélection média ───────────────────────────
+        // Bouton média
         Button btnPickMedia = new Button(getActivity());
         btnPickMedia.setText("📎 Ajouter une photo / vidéo");
         btnPickMedia.setBackgroundTintList(
                 android.content.res.ColorStateList.valueOf(
                         getResources().getColor(R.color.green_light, null)));
         btnPickMedia.setTextColor(getResources().getColor(android.R.color.white, null));
-        LinearLayout.LayoutParams btnParams =
-                new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams btnParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
         btnParams.setMargins(0, 20, 0, 4);
         btnPickMedia.setLayoutParams(btnParams);
         layout.addView(btnPickMedia);
 
-        // ── Label d'état ─────────────────────────────────────
         tvMediaSelected = new TextView(getActivity());
         tvMediaSelected.setText("Aucun média sélectionné");
         tvMediaSelected.setTextSize(12f);
@@ -454,12 +486,12 @@ public class FormateurFragment extends Fragment {
         new AlertDialog.Builder(getActivity())
                 .setTitle(getString(R.string.create_ressource_title))
                 .setView(layout)
-                // Libérer la référence quand le dialog est fermé
                 .setOnDismissListener(d -> tvMediaSelected = null)
                 .setPositiveButton(getString(R.string.btn_create_ressource), (dialog, which) -> {
                     String title   = etTitle.getText().toString().trim();
                     String content = etContent.getText().toString().trim();
-                    String theme   = etTheme.getText().toString().trim();
+                    // Correction : utiliser spTheme au lieu de etTheme
+                    String theme   = themes[spTheme.getSelectedItemPosition()];
                     String type    = rbGuide.isChecked() ? "guide" : "article";
 
                     if (title.isEmpty() || content.isEmpty()) {

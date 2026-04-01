@@ -54,7 +54,7 @@
     <string name="hint_formation_title">Titre</string>
     <string name="hint_formation_description">Description</string>
     <string name="hint_formation_theme">Thème</string>
-    <string name="hint_formation_location">Lieu (si présentiel)</string>
+    <string name="hint_formation_location">Lieu</string>
     <string name="lbl_type_select">Type</string>
     <string name="formation_created">Formation créée avec succès !</string>
     <string name="btn_create_formation">Créer la formation</string>
@@ -152,8 +152,6 @@
 
     <!-- Themes -->
     <string name="theme_all">Tous les thèmes</string>
-    <string name="theme_environment">Environnement</string>
-    <string name="theme_inclusion">Inclusion</string>
     <string name="filter_by_theme">Filtrer par thème</string>
     <string name="btn_search">Rechercher</string>
     <string name="btn_leave_formation">Quitter la formation</string>
@@ -171,4 +169,9 @@
     <string name="err_too_many_active">Vous avez déjà %1$d formations en cours. Terminez-en une d\'abord.</string>
     <string name="tip_approved">Conseil approuvé !</string>
     <string name="tip_rejected">Conseil rejeté.</string>
+    <!-- FR -->
+    <string name="theme_environment">Environnement</string>
+    <string name="theme_inclusion">Inclusion</string>
+    <string name="theme_health">Santé</string>
+    <string name="theme_citizenship">Citoyenneté</string>
 </resources>

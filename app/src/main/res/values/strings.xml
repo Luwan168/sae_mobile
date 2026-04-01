@@ -61,7 +61,7 @@
     <string name="hint_formation_title">Title</string>
     <string name="hint_formation_description">Description</string>
     <string name="hint_formation_theme">Theme</string>
-    <string name="hint_formation_location">Location (if in-person)</string>
+    <string name="hint_formation_location">Location</string>
     <string name="lbl_type_select">Type</string>
     <string name="formation_created">Training created successfully!</string>
     <string name="btn_create_formation">Create training</string>
@@ -187,8 +187,6 @@
 
     <!-- Themes -->
     <string name="theme_all">All themes</string>
-    <string name="theme_environment">Environment</string>
-    <string name="theme_inclusion">Inclusion</string>
     <string name="filter_by_theme">Filter by theme</string>
     <string name="btn_leave_formation">Leave training</string>
     <string name="leave_formation_title">Leave training</string>
@@ -206,5 +204,9 @@
     <string name="tip_approved">Tip approved!</string>
     <string name="tip_rejected">Tip rejected.</string>
     <string name="btn_search">Search</string>
+    <string name="theme_environment">Environment</string>
+    <string name="theme_inclusion">Inclusion</string>
+    <string name="theme_health">Health</string>
+    <string name="theme_citizenship">Citizenship</string>
 
 </resources>
