@@ -149,7 +149,8 @@ public class QuizFragment extends Fragment {
             String     theme         = f.optString("theme", "");
             String     status        = f.getString("enrollment_status");
             int        quizCount     = f.getInt("quiz_count");
-            boolean    done          = status.equals("termine");
+            // done = quiz déjà soumis (score sauvegardé), peu importe le statut
+            boolean    done          = !f.isNull("score") || f.optInt("quiz_submitted", 0) == 1;
             Integer    score         = f.isNull("score") ? null : f.getInt("score");
 
             // ── Carte ────────────────────────────────────────
@@ -339,7 +340,7 @@ public class QuizFragment extends Fragment {
                         if (!json.getString("status").equals("success")) return;
 
                         int     score = json.getInt("score");
-                        boolean badge = json.getBoolean("badge_awarded");
+                        boolean badge = json.optBoolean("badge_awarded", false);
 
                         // Afficher le résultat
                         String msg = getString(R.string.quiz_result, score);
@@ -443,7 +444,7 @@ public class QuizFragment extends Fragment {
                         }
 
                         int     score = json.getInt("score");
-                        boolean badge = json.getBoolean("badge_awarded");
+                        boolean badge = json.optBoolean("badge_awarded", false);
 
                         // Feedback visuel sur les réponses
                         if (json.has("details")) {
