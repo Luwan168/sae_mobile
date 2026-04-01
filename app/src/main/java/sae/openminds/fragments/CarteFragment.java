@@ -164,11 +164,15 @@ public class CarteFragment extends Fragment {
     }
 
     private void setupFilter() {
-        String[] themes = {
-                getString(R.string.theme_all),
-                getString(R.string.theme_environment),
-                getString(R.string.theme_inclusion)
-        };
+        // Utilise la liste centralisée de Config
+// Les thèmes sont traduits via les strings.xml
+        String[] themes = new String[Config.THEMES.length];
+        for (int i = 0; i < Config.THEMES.length; i++) {
+            int resId = getActivity().getResources()
+                    .getIdentifier("theme_" + Config.THEMES[i], "string",
+                            getActivity().getPackageName());
+            themes[i] = resId != 0 ? getString(resId) : Config.THEMES[i];
+        }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(),
                 android.R.layout.simple_spinner_item, themes);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

@@ -21,4 +21,6 @@ public class Config {
     public static final String KEY_EMAIL     = "email";
     public static final String KEY_LANGUAGE  = "language";
     public static final String KEY_NOTIFS    = "notifications_enabled";
+    public static final String[] THEMES = {"environment", "inclusion", "health", "citizenship"};
+    public static final int      THEME_DEFAULT_INDEX = 0;
 }
