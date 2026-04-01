@@ -10,4 +10,5 @@ public class Ressource {
     public String theme;
     public String type;   // "article" ou "guide"
     public String author;
+    public String media_url;
 }
