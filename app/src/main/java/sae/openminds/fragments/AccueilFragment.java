@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -115,31 +117,49 @@ public class AccueilFragment extends Fragment {
         etContent.setMinLines(2);
         layout.addView(etContent);
 
-        EditText etTheme = new EditText(getActivity());
-        etTheme.setHint(getString(R.string.hint_tip_theme));
-        layout.addView(etTheme);
+        // Thème — Spinner centralisé
+        TextView tvThemeLabel = new TextView(getActivity());
+        tvThemeLabel.setText(getString(R.string.lbl_theme));
+        tvThemeLabel.setPadding(0, 16, 0, 4);
+        layout.addView(tvThemeLabel);
+
+        String[] themes = new String[Config.THEMES.length];
+        for (int i = 0; i < Config.THEMES.length; i++) {
+            int resId = getActivity().getResources()
+                    .getIdentifier("theme_" + Config.THEMES[i], "string",
+                            getActivity().getPackageName());
+            themes[i] = resId != 0 ? getString(resId) : Config.THEMES[i];
+        }
+        Spinner spTheme = new Spinner(getActivity());
+        spTheme.setAdapter(new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_spinner_dropdown_item, themes));
+        layout.addView(spTheme);
 
         new AlertDialog.Builder(getActivity())
                 .setTitle(getString(R.string.submit_tip_title))
                 .setView(layout)
                 .setPositiveButton(getString(R.string.btn_submit_tip), (dialog, which) -> {
                     String content = etContent.getText().toString().trim();
-                    String theme   = etTheme.getText().toString().trim();
+                    String theme   = Config.THEMES[spTheme.getSelectedItemPosition()];
                     if (content.isEmpty()) {
-                        Toast.makeText(getActivity(), getString(R.string.err_fill_fields), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),
+                                getString(R.string.err_fill_fields), Toast.LENGTH_SHORT).show();
                         return;
                     }
                     Ion.with(this).load("POST", Config.BASE_URL + "submitTip.php")
                             .setBodyParameter("token",   token)
                             .setBodyParameter("content", content)
-                            .setBodyParameter("theme",   theme.isEmpty() ? "general" : theme)
+                            .setBodyParameter("theme",   theme)
                             .asString()
                             .setCallback((e, result) -> {
                                 if (e != null || result == null) return;
                                 try {
-                                    String status = JsonParser.parseString(result).getAsJsonObject().get("status").getAsString();
+                                    String status = JsonParser.parseString(result)
+                                            .getAsJsonObject().get("status").getAsString();
                                     Toast.makeText(getActivity(),
-                                            status.equals("success") ? getString(R.string.tip_submitted) : getString(R.string.err_server),
+                                            status.equals("success")
+                                                    ? getString(R.string.tip_submitted)
+                                                    : getString(R.string.err_server),
                                             Toast.LENGTH_LONG).show();
                                 } catch (Exception ignored) {}
                             });
