@@ -14,14 +14,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.work.ExistingPeriodicWorkPolicy;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 
 import com.google.gson.JsonParser;
 import com.koushikdutta.ion.Ion;
 
 import org.json.JSONObject;
 
+import java.util.concurrent.TimeUnit;
+
 import sae.openminds.Config;
 import sae.openminds.R;
+import sae.openminds.TipWorker;
 
 // ============================================================
 //  AccueilFragment — Page d'accueil enrichie
@@ -61,6 +67,7 @@ public class AccueilFragment extends Fragment {
         btnSubmitTip.setOnClickListener(v -> showSubmitTipDialog(token));
         fetchTip();
         fetchStats(token);
+        scheduleTipNotifications();
         return view;
     }
 
@@ -139,5 +146,20 @@ public class AccueilFragment extends Fragment {
                 })
                 .setNegativeButton(getString(R.string.btn_cancel), null)
                 .show();
+    }
+
+    private void scheduleTipNotifications() {
+        // Pour un test toutes les 2 minutes (OneTimeWorkRequest récurrente)
+        PeriodicWorkRequest tipRequest = new PeriodicWorkRequest.Builder(TipWorker.class,
+                15, TimeUnit.MINUTES) // Minimum légal 15 min
+                .addTag("TIP_WORKER")
+                .build();
+
+
+        WorkManager.getInstance(requireContext()).enqueueUniquePeriodicWork(
+                "UniqueTipWork",
+                ExistingPeriodicWorkPolicy.KEEP, // TRÈS IMPORTANT : ne redémarre pas le cycle si déjà actif
+                tipRequest
+        );
     }
 }

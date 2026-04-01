@@ -39,6 +39,7 @@ dependencies {
     implementation("com.koushikdutta.ion:ion:3.1.0")
     // Parsing JSON
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation(libs.work.runtime)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

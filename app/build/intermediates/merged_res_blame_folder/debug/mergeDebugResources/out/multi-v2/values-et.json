@@ -4,24 +4,7 @@
             "outputFile": "sae.openminds.app-mergeDebugResources-1:/values-et/values-et.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\moham\\.gradle\\caches\\9.1.0\\transforms\\4fd129e9dc55d48d8e9bdb7572c8303f\\workspace\\transformed\\core-1.16.0\\res\\values-et\\values-et.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,150,252,350,453,559,664,784",
-                        "endColumns": "94,101,97,102,105,104,119,100",
-                        "endOffsets": "145,247,345,448,554,659,779,880"
-                    },
-                    "to": {
-                        "startLines": "37,38,39,40,41,42,43,121",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3369,3464,3566,3664,3767,3873,3978,10183",
-                        "endColumns": "94,101,97,102,105,104,119,100",
-                        "endOffsets": "3459,3561,3659,3762,3868,3973,4093,10279"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\moham\\.gradle\\caches\\9.1.0\\transforms\\4ec3371b527b4b343eb1aebba8b043da\\workspace\\transformed\\material-1.13.0\\res\\values-et\\values-et.xml",
+                    "source": "C:\\Users\\moham\\.gradle\\caches\\9.1.0\\transforms\\036b215493bd58792723daace8459d9b\\workspace\\transformed\\material-1.13.0\\res\\values-et\\values-et.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,7 +23,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\moham\\.gradle\\caches\\9.1.0\\transforms\\9111e9b5acef0f1da6b61250d0905e82\\workspace\\transformed\\appcompat-1.7.1\\res\\values-et\\values-et.xml",
+                    "source": "C:\\Users\\moham\\.gradle\\caches\\9.1.0\\transforms\\f7200092531e0a9091eafc4d0f0d25b2\\workspace\\transformed\\core-1.16.0\\res\\values-et\\values-et.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,150,252,350,453,559,664,784",
+                        "endColumns": "94,101,97,102,105,104,119,100",
+                        "endOffsets": "145,247,345,448,554,659,779,880"
+                    },
+                    "to": {
+                        "startLines": "37,38,39,40,41,42,43,121",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3369,3464,3566,3664,3767,3873,3978,10183",
+                        "endColumns": "94,101,97,102,105,104,119,100",
+                        "endOffsets": "3459,3561,3659,3762,3868,3973,4093,10279"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\moham\\.gradle\\caches\\9.1.0\\transforms\\b0fc8cd38b2541350778ca78e1a9f542\\workspace\\transformed\\appcompat-1.7.1\\res\\values-et\\values-et.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
