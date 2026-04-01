@@ -2,19 +2,24 @@ package sae.openminds.fragments;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +37,7 @@ import com.koushikdutta.ion.Ion;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -57,41 +63,49 @@ public class FormateurFragment extends Fragment {
     private TextView        tvEmpty;
     private List<Formation> mesFormations = new ArrayList<>();
 
-    // ── Champs pour le sélecteur de média ───────────────────
-    private Uri    selectedMediaUri  = null;
-    private String selectedMimeType  = null;
-    private TextView tvMediaSelected = null;   // référence au TextView du dialog
-    private ActivityResultLauncher<String[]> mediaPickerLauncher;
+    // ── Champs pour le sélecteur d'image (Ressources) ───────
+    private String          selectedImageB64 = null;
+    private ImageView       ivPreviewRessource = null;
+    private ActivityResultLauncher<String> imagePickerLauncher;
 
     // ── Enregistrement du launcher AVANT onCreateView ───────
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mediaPickerLauncher = registerForActivityResult(
-                new ActivityResultContracts.OpenDocument(),
+        imagePickerLauncher = registerForActivityResult(
+                new ActivityResultContracts.GetContent(),
                 uri -> {
                     if (uri == null) return;
+                    try {
+                        InputStream is = requireContext().getContentResolver().openInputStream(uri);
+                        Bitmap bmp = BitmapFactory.decodeStream(is);
+                        if (is != null) is.close();
 
-                    // Persister la permission de lecture
-                    requireActivity().getContentResolver()
-                            .takePersistableUriPermission(uri,
-                                    android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                        bmp = scaleBitmap(bmp, 1024);
 
-                    selectedMediaUri  = uri;
-                    selectedMimeType  = requireActivity().getContentResolver().getType(uri);
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        bmp.compress(Bitmap.CompressFormat.JPEG, 85, baos);
+                        byte[] bytes = baos.toByteArray();
+                        selectedImageB64 = "data:image/jpeg;base64,"
+                                + Base64.encodeToString(bytes, Base64.NO_WRAP);
 
-                    if (tvMediaSelected != null) {
-                        boolean isVideo = selectedMimeType != null
-                                && selectedMimeType.startsWith("video");
-                        tvMediaSelected.setText(isVideo
-                                ? "🎬 Vidéo sélectionnée ✓"
-                                : "🖼️ Photo sélectionnée ✓");
-                        tvMediaSelected.setTextColor(
-                                getResources().getColor(R.color.green_primary, null));
+                        if (ivPreviewRessource != null) {
+                            ivPreviewRessource.setImageBitmap(bmp);
+                            ivPreviewRessource.setVisibility(View.VISIBLE);
+                        }
+                    } catch (Exception e) {
+                        Toast.makeText(getActivity(), "Erreur lecture image", Toast.LENGTH_SHORT).show();
                     }
                 }
         );
+    }
+
+    private Bitmap scaleBitmap(Bitmap src, int maxWidth) {
+        if (src.getWidth() <= maxWidth) return src;
+        float ratio = (float) maxWidth / src.getWidth();
+        int newH = Math.round(src.getHeight() * ratio);
+        return Bitmap.createScaledBitmap(src, maxWidth, newH, true);
     }
 
     @Override
@@ -112,9 +126,7 @@ public class FormateurFragment extends Fragment {
                 .setOnClickListener(v -> showAddQuestionDialog());
         view.findViewById(R.id.btnCreateRessource)
                 .setOnClickListener(v -> {
-                    // Réinitialiser le média sélectionné à chaque ouverture
-                    selectedMediaUri = null;
-                    selectedMimeType = null;
+                    selectedImageB64 = null;
                     showCreateRessourceDialog();
                 });
 
@@ -190,7 +202,6 @@ public class FormateurFragment extends Fragment {
                                 .setMessage(sb.toString())
                                 .setPositiveButton(getString(R.string.btn_ok), null);
 
-                        // Bouton pour terminer la formation
                         if (!f.is_completed) {
                             builder.setNeutralButton(getString(R.string.btn_end_formation), (dialog, which) -> {
                                 confirmEndFormation(f);
@@ -395,11 +406,15 @@ public class FormateurFragment extends Fragment {
                 .show();
     }
 
-    // ── Créer une ressource (avec media optionnel) ───────────
+    // ── Créer une ressource (avec image de la galerie) ───────────
     private void showCreateRessourceDialog() {
+        selectedImageB64 = null;
+
+        ScrollView scrollView = new ScrollView(getActivity());
         LinearLayout layout = new LinearLayout(getActivity());
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(50, 30, 50, 20);
+        scrollView.addView(layout);
 
         EditText etTitle = new EditText(getActivity());
         etTitle.setHint(getString(R.string.hint_formation_title));
@@ -425,37 +440,38 @@ public class FormateurFragment extends Fragment {
         rg.addView(rbGuide);
         layout.addView(rg);
 
-        // ── Bouton sélection média ───────────────────────────
-        Button btnPickMedia = new Button(getActivity());
-        btnPickMedia.setText("📎 Ajouter une photo / vidéo");
-        btnPickMedia.setBackgroundTintList(
+        // ── Bouton sélection image ───────────────────────────
+        Button btnPickImage = new Button(getActivity());
+        btnPickImage.setText("📎 Ajouter une photo");
+        btnPickImage.setBackgroundTintList(
                 android.content.res.ColorStateList.valueOf(
                         getResources().getColor(R.color.green_light, null)));
-        btnPickMedia.setTextColor(getResources().getColor(android.R.color.white, null));
+        btnPickImage.setTextColor(getResources().getColor(android.R.color.white, null));
         LinearLayout.LayoutParams btnParams =
                 new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT);
         btnParams.setMargins(0, 20, 0, 4);
-        btnPickMedia.setLayoutParams(btnParams);
-        layout.addView(btnPickMedia);
+        btnPickImage.setLayoutParams(btnParams);
+        layout.addView(btnPickImage);
 
-        // ── Label d'état ─────────────────────────────────────
-        tvMediaSelected = new TextView(getActivity());
-        tvMediaSelected.setText("Aucun média sélectionné");
-        tvMediaSelected.setTextSize(12f);
-        tvMediaSelected.setTextColor(
-                getResources().getColor(android.R.color.darker_gray, null));
-        layout.addView(tvMediaSelected);
+        // ── Preview image ─────────────────────────────────────
+        ivPreviewRessource = new ImageView(getActivity());
+        ivPreviewRessource.setVisibility(View.GONE);
+        ivPreviewRessource.setAdjustViewBounds(true);
+        ivPreviewRessource.setMaxHeight(400);
+        LinearLayout.LayoutParams lpImg = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        lpImg.topMargin = 12;
+        ivPreviewRessource.setLayoutParams(lpImg);
+        layout.addView(ivPreviewRessource);
 
-        btnPickMedia.setOnClickListener(v ->
-                mediaPickerLauncher.launch(new String[]{"image/*", "video/*"}));
+        btnPickImage.setOnClickListener(v -> imagePickerLauncher.launch("image/*"));
 
         new AlertDialog.Builder(getActivity())
                 .setTitle(getString(R.string.create_ressource_title))
-                .setView(layout)
-                // Libérer la référence quand le dialog est fermé
-                .setOnDismissListener(d -> tvMediaSelected = null)
+                .setView(scrollView)
                 .setPositiveButton(getString(R.string.btn_create_ressource), (dialog, which) -> {
                     String title   = etTitle.getText().toString().trim();
                     String content = etContent.getText().toString().trim();
@@ -463,83 +479,42 @@ public class FormateurFragment extends Fragment {
                     String type    = rbGuide.isChecked() ? "guide" : "article";
 
                     if (title.isEmpty() || content.isEmpty()) {
-                        Toast.makeText(getActivity(),
-                                getString(R.string.err_fill_fields), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.err_fill_fields), Toast.LENGTH_SHORT).show();
                         return;
                     }
                     submitRessource(title, content, theme, type);
                 })
-                .setNegativeButton(getString(R.string.btn_cancel), null)
+                .setNegativeButton(getString(R.string.btn_cancel), (d, w) -> {
+                    ivPreviewRessource = null;
+                    selectedImageB64 = null;
+                })
                 .show();
     }
 
-    // ── Envoi de la ressource (avec ou sans fichier) ─────────
     private void submitRessource(String title, String content, String theme, String type) {
-        if (selectedMediaUri != null) {
-            // Envoi multipart avec le fichier média
-            try {
-                File   mediaFile = getFileFromUri(selectedMediaUri);
-                String mime      = selectedMimeType != null ? selectedMimeType : "image/jpeg";
-
-                Ion.with(this).load("POST", Config.BASE_URL + "createRessource.php")
-                        .setMultipartParameter("token",   token)
-                        .setMultipartParameter("title",   title)
-                        .setMultipartParameter("content", content)
-                        .setMultipartParameter("theme",   theme)
-                        .setMultipartParameter("type",    type)
-                        .setMultipartFile("media", mime, mediaFile)
-                        .asString()
-                        .setCallback((e, result) -> handleRessourceResponse(e, result));
-
-            } catch (IOException ex) {
-                Toast.makeText(getActivity(),
-                        getString(R.string.err_server), Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            // Envoi classique sans fichier
-            Ion.with(this).load("POST", Config.BASE_URL + "createRessource.php")
-                    .setBodyParameter("token",   token)
-                    .setBodyParameter("title",   title)
-                    .setBodyParameter("content", content)
-                    .setBodyParameter("theme",   theme)
-                    .setBodyParameter("type",    type)
-                    .asString()
-                    .setCallback((e, result) -> handleRessourceResponse(e, result));
-        }
-    }
-
-    private void handleRessourceResponse(Exception e, String result) {
-        if (e != null || result == null) {
-            Toast.makeText(getActivity(),
-                    getString(R.string.err_server), Toast.LENGTH_SHORT).show();
-            return;
-        }
-        try {
-            String status = JsonParser.parseString(result)
-                    .getAsJsonObject().get("status").getAsString();
-            Toast.makeText(getActivity(),
-                    status.equals("success")
-                            ? getString(R.string.ressource_created)
-                            : getString(R.string.err_server),
-                    Toast.LENGTH_SHORT).show();
-        } catch (Exception ignored) {}
-    }
-
-    // ── Copier l'URI dans un fichier temporaire ──────────────
-    private File getFileFromUri(Uri uri) throws IOException {
-        String mime = requireActivity().getContentResolver().getType(uri);
-        String ext  = (mime != null && mime.startsWith("video")) ? ".mp4" : ".jpg";
-        File tmp = File.createTempFile("media_upload", ext,
-                requireActivity().getCacheDir());
-
-        try (InputStream  in  = requireActivity().getContentResolver().openInputStream(uri);
-             OutputStream out = new FileOutputStream(tmp)) {
-            byte[] buf = new byte[8192];
-            int len;
-            if (in != null) {
-                while ((len = in.read(buf)) > 0) out.write(buf, 0, len);
-            }
-        }
-        return tmp;
+        Ion.with(this).load("POST", Config.BASE_URL + "createRessource.php")
+                .setBodyParameter("token",   token)
+                .setBodyParameter("title",   title)
+                .setBodyParameter("content", content)
+                .setBodyParameter("theme",   theme)
+                .setBodyParameter("type",    type)
+                .setBodyParameter("image",   selectedImageB64 != null ? selectedImageB64 : "")
+                .asString()
+                .setCallback((e, result) -> {
+                    if (e != null || result == null) {
+                        Toast.makeText(getActivity(), getString(R.string.err_server), Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    try {
+                        String status = JsonParser.parseString(result).getAsJsonObject().get("status").getAsString();
+                        if (status.equals("success")) {
+                            Toast.makeText(getActivity(), getString(R.string.ressource_created), Toast.LENGTH_SHORT).show();
+                            ivPreviewRessource = null;
+                            selectedImageB64 = null;
+                        } else {
+                            Toast.makeText(getActivity(), getString(R.string.err_server), Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (Exception ignored) {}
+                });
     }
 }

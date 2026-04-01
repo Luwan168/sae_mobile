@@ -5,10 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.koushikdutta.ion.Ion;
 
 import java.util.List;
 
+import sae.openminds.Config;
 import sae.openminds.R;
 import sae.openminds.models.Ressource;
 
@@ -29,12 +33,31 @@ public class RessourceAdapter extends ArrayAdapter<Ressource> {
         Ressource r = getItem(position);
         if (r == null) return convertView;
 
-        ((TextView) convertView.findViewById(R.id.tvRessourceTitle)).setText(r.title);
-        ((TextView) convertView.findViewById(R.id.tvRessourceTheme)).setText(r.theme);
+        TextView tvTitle = convertView.findViewById(R.id.tvRessourceTitle);
+        TextView tvTheme = convertView.findViewById(R.id.tvRessourceTheme);
+        TextView tvType  = convertView.findViewById(R.id.tvRessourceType);
+        ImageView ivMedia = convertView.findViewById(R.id.ivRessourceMedia);
+
+        tvTitle.setText(r.title);
+        tvTheme.setText(r.theme);
+        
         String typeLabel = "guide".equals(r.type)
                 ? getContext().getString(R.string.lbl_guide)
                 : getContext().getString(R.string.lbl_article);
-        ((TextView) convertView.findViewById(R.id.tvRessourceType)).setText(typeLabel);
+        tvType.setText(typeLabel);
+
+        // Gestion de l'image
+        if (r.image_url != null && !r.image_url.isEmpty()) {
+            ivMedia.setVisibility(View.VISIBLE);
+            String fullUrl = Config.BASE_URL + r.image_url;
+            Ion.with(ivMedia)
+                    .placeholder(R.drawable.ic_image_placeholder) // Utilisation de l'icône de placeholder du projet
+                    .error(R.drawable.ic_image_placeholder)       // Utilisation de l'icône de placeholder en cas d'erreur
+                    .load(fullUrl);
+        } else {
+            ivMedia.setVisibility(View.GONE);
+        }
+
         return convertView;
     }
 }

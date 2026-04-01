@@ -10,5 +10,5 @@ public class Ressource {
     public String theme;
     public String type;   // "article" ou "guide"
     public String author;
-    public String media_url;
+    public String image_url; // Correspond au champ PHP
 }
