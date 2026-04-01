@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -39,6 +40,8 @@ public class ProfilFragment extends Fragment {
     private ListView lvBadges; // Changé de RecyclerView à ListView
     private BadgeAdapter badgeAdapter;
     private List<Badge> badgeList = new ArrayList<>();
+    private Button btnShowBadges;
+    private boolean isVisible = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -118,6 +121,27 @@ public class ProfilFragment extends Fragment {
                         tvEmpty.setVisibility(View.VISIBLE);
                     }
                 });
+
+        btnShowBadges = view.findViewById(R.id.btn_show_badges);
+        lvBadges = view.findViewById(R.id.lv_badges_profil); // Ton ID actuel
+
+        btnShowBadges.setOnClickListener(v -> {
+            if (!isVisible) {
+                // 1. On lance la récupération des données
+                fetchBadges(token);
+
+                // 2. On affiche la liste et on change le texte du bouton
+                lvBadges.setVisibility(View.VISIBLE);
+                btnShowBadges.setText("Cacher mes badges");
+                isVisible = true;
+            } else {
+                // On cache tout
+                lvBadges.setVisibility(View.GONE);
+                btnShowBadges.setText("Voir mes badges obtenus");
+                isVisible = false;
+            }
+        });
+
         return view;
     }
 

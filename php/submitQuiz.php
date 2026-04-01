@@ -37,23 +37,9 @@ $upd = $db_con->prepare(
 $upd->bind_param("iii", $score, $user_id, $formation_id);
 $upd->execute();
 
-// Attribuer badge si score >= 70
-$badge_awarded = false;
-if ($score >= 70) {
-    $b = $db_con->prepare("SELECT id FROM badge WHERE formation_id = ? LIMIT 1");
-    $b->bind_param("i",$formation_id); $b->execute();
-    $badge = $b->get_result()->fetch_assoc();
-    if ($badge) {
-        $ins = $db_con->prepare(
-            "INSERT IGNORE INTO user_badge (user_id, badge_id) VALUES (?,?)"
-        );
-        $ins->bind_param("ii",$user_id,$badge['id']);
-        $badge_awarded = $ins->execute();
-    }
-}
 
 echo json_encode([
     "status"        => "success",
-    "score"         => $score,
-    "badge_awarded" => $badge_awarded
+    "score"         => $score
 ]);
+exit();

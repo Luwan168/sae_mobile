@@ -461,7 +461,7 @@ public class QuizFragment extends Fragment {
 
                         String msg = getString(R.string.quiz_result, score);
                         if (badge) msg += "\n" + getString(R.string.badge_awarded);
-                        else if (score < 70) msg += "\n" + getString(R.string.quiz_failed);
+                        else if (score < 75) msg += "\n" + getString(R.string.quiz_failed);
                         tvResult.setText(msg);
                         cardResult.setVisibility(View.VISIBLE);
                         tvResult.setVisibility(View.VISIBLE);

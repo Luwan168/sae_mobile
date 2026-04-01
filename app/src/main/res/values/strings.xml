@@ -97,7 +97,7 @@
     <string name="btn_submit_quiz">Submit answers</string>
     <string name="quiz_result">Your score: %1$d%%</string>
     <string name="badge_awarded">🎉 Congratulations! You earned a badge!</string>
-    <string name="quiz_failed">Score below 70%%. Keep practicing!</string>
+    <string name="quiz_failed">Score below 75%%. Keep practicing!</string>
     <string name="empty_quiz">No questions for this training.</string>
     <string name="select_formation_first">Please select a training first.</string>
     <string name="err_answer_all">Please answer all questions.</string>
