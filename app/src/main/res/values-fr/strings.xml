@@ -33,7 +33,7 @@
     <string name="menu_ressources">Ressources</string>
     <string name="menu_carte">Formations proches</string>
     <string name="menu_profil">Mon profil</string>
-    <string name="menu_formateur">Mes formations</string>
+    <string name="menu_formateur">Formateur</string>
     <string name="menu_admin">Administration</string>
     <string name="menu_settings">Paramètres</string>
     <string name="menu_logout">Déconnexion</string>

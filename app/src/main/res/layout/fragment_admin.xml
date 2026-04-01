@@ -50,6 +50,36 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- ── Nouvelle section : Actualités ── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Actualités"
+                    android:textColor="@color/green_primary"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+                <Button
+                    android:id="@+id/btnCreateActualite"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:backgroundTint="@color/green_primary"
+                    android:text="Créer une actualité"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
         <!-- Validation des tips soumis -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
